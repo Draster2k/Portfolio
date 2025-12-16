@@ -13,11 +13,24 @@ https://templatemo.com/tm-597-neural-glass
      margin: 0;
      padding: 0;
      box-sizing: border-box;
+    }
+
+ html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
+
  body {
      font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
      background: #000;
      color: #E2E8F0;
+     margin: 0;
+     padding: 0;
+     width: 100%;
+     max-width: 100%;
      overflow-x: hidden;
      min-height: 100vh;
      font-weight: 400;
@@ -196,7 +209,7 @@ https://templatemo.com/tm-597-neural-glass
      left: 50%;
      transform: translateX(-50%);
      z-index: 100;
-     width: 96%;
+     width: calc(100% - 24px);
      max-width: 1200px;
      padding: 18px 35px;
      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -216,6 +229,8 @@ https://templatemo.com/tm-597-neural-glass
      display: flex;
      justify-content: space-between;
      align-items: center;
+
+     
 }
  .logo {
      display: flex;
@@ -412,6 +427,8 @@ section {
 
 /* Section 1: Modern Redesigned Hero */
  .hero {
+    position: relative;
+    overflow-x: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1105,46 +1122,6 @@ section {
      font-size: 1rem;
 }
 /* Section 5: Contact */
- .contact {
-     padding: 150px 0;
-     position: relative;
-}
-
- .contact-container {
-     max-width: 1200px;
-     margin: 0 auto;
-     padding: 0 20px;
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     gap: 80px;
-     align-items: center;
-}
- .contact-info {
-     padding: 60px 40px;
-     position: relative;
-}
- .contact-info::before {
-     content: '';
-     position: absolute;
-     top: -50%;
-     left: -50%;
-     width: 200%;
-     height: 200%;
-     background: radial-gradient(circle, rgba(34, 211, 238, 0.1), transparent 70%);
-     animation: pulse 4s ease-in-out infinite;
-     z-index: -1;
-}
- @keyframes pulse {
-     0%, 100% {
-         transform: scale(1);
-         opacity: 0.5;
-    }
-     50% {
-         transform: scale(1.1);
-         opacity: 1;
-    }
-}
-/* Section 5: Contact */
 .contact {
     padding: 150px 0;
     position: relative;
@@ -1166,6 +1143,9 @@ section {
     background: rgba(165, 243, 252, 0.08);
     border: 1px solid rgba(165, 243, 252, 0.15);
     box-shadow: 0 0 25px rgba(34, 211, 238, 0.25);
+
+    position: relative;
+    overflow: hidden;
 }
 
 .contact-info::before {
@@ -1173,9 +1153,11 @@ section {
     position: absolute;
     top: -50%;
     left: -50%;
-    width: 200%;
-    height: 200%;
+    width: 160%;
+    height: 160%;
     background: radial-gradient(circle, rgba(34, 211, 238, 0.1), transparent 70%);
+    filter: blur(40px);
+    opacity: 0.8;
     animation: pulse 4s ease-in-out infinite;
     z-index: -1;
 }
@@ -1207,20 +1189,13 @@ section {
     border-radius: 15px;
     background: rgba(165, 243, 252, 0.08);
     border: 1px solid rgba(165, 243, 252, 0.15);
-    color: #ffffff; /* all icons start white */
+    color: #ffffff;
     font-size: 1.5rem;
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
-
-.social-links a:hover {
-    color: #22D3EE; /* all icons glow cyan on hover */
-    box-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
-    transform: translateY(-5px) scale(1.1);
-}
-
 
 .social-links a::before {
     content: '';
@@ -1238,8 +1213,20 @@ section {
 }
 
 .social-links a:hover {
+    color: #22D3EE;
     transform: translateY(-5px) scale(1.1);
     box-shadow: 0 0 25px rgba(34, 211, 238, 0.5);
+}
+
+ @keyframes pulse {
+     0%, 100% {
+         transform: scale(1);
+         opacity: 0.5;
+    }
+     50% {
+         transform: scale(1.1);
+         opacity: 1;
+    }
 }
 
 /* Footer */
@@ -1526,28 +1513,4 @@ section {
  a, a:visited, a:hover, a:active {
     text-decoration: none;
     color: inherit;
-}
-/* CV Button in Contact */
-.cta-button {
-  background: linear-gradient(135deg, #0077ff, #00d4ff);
-  color: white;
-  padding: 12px 22px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-.cta-button:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(135deg, #005fcc, #00aacc);
-}
-
-/* Footer CV link */
-.footer-download a {
-  color: #00d4ff;
-  font-size: 14px;
-  text-decoration: none;
-}
-.footer-download a:hover {
-  text-decoration: underline;
 }
