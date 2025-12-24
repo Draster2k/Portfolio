@@ -13,24 +13,19 @@ https://templatemo.com/tm-597-neural-glass
      margin: 0;
      padding: 0;
      box-sizing: border-box;
-    }
-
- html {
+}
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
 }
-
  body {
      font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
      background: #000;
      color: #E2E8F0;
-     margin: 0;
-     padding: 0;
-     width: 100%;
-     max-width: 100%;
      overflow-x: hidden;
      min-height: 100vh;
      font-weight: 400;
@@ -209,7 +204,7 @@ https://templatemo.com/tm-597-neural-glass
      left: 50%;
      transform: translateX(-50%);
      z-index: 100;
-     width: calc(100% - 24px);
+     width: 96%;
      max-width: 1200px;
      padding: 18px 35px;
      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -229,8 +224,6 @@ https://templatemo.com/tm-597-neural-glass
      display: flex;
      justify-content: space-between;
      align-items: center;
-
-     
 }
  .logo {
      display: flex;
@@ -427,8 +420,6 @@ section {
 
 /* Section 1: Modern Redesigned Hero */
  .hero {
-    position: relative;
-    overflow-x: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1144,8 +1135,8 @@ section {
     border: 1px solid rgba(165, 243, 252, 0.15);
     box-shadow: 0 0 25px rgba(34, 211, 238, 0.25);
 
-    position: relative;
-    overflow: hidden;
+    position: relative;   /* important */
+    overflow: hidden;     /* clip the glow so it doesn't widen the page */
 }
 
 .contact-info::before {
@@ -1153,7 +1144,7 @@ section {
     position: absolute;
     top: -50%;
     left: -50%;
-    width: 160%;
+    width: 160%;  /* not 200% */
     height: 160%;
     background: radial-gradient(circle, rgba(34, 211, 238, 0.1), transparent 70%);
     filter: blur(40px);
