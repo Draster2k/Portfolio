@@ -32,7 +32,7 @@ body {
 /* ---- HERO: do NOT become a scroll container ---- */
 .hero {
   height: auto;
-  min-height: 100svh;   /* stable viewport height on mobile */
+  min-height: auto;   /* stable viewport height on mobile */
   overflow: hidden;    /* prevents “hero has its own scrollbar” */
 }
 
