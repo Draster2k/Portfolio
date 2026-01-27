@@ -60,19 +60,41 @@
   </section>
 
   <section class="project-section glass">
-    <h2>Results</h2>
-    <p>EGO was benchmarked against Genetic Algorithm (GA), Particle Swarm Optimization (PSO), and Differential Evolution (DE):</p>
-    <ul>
-      <li><strong>Sphere (convex):</strong> Fastest convergence.</li>
-      <li><strong>Ackley (multimodal):</strong> Avoided premature convergence where GA/PSO failed.</li>
-      <li><strong>Rastrigin:</strong> Maintained diversity longer → reached global optima.</li>
-    </ul>
-    <p class="results-equation">
-      f<sub>best</sub>(EGO) &lt; f<sub>best</sub>(GA, PSO, DE)  
-      <br>
-      for 90% of runs
+    <h2>Performance: Breaking the Curse of Dimensionality</h2>
+    <p>
+      Most optimization algorithms degrade exponentially as dimensions increase. 
+      <strong>EGO defies this trend.</strong> In recent benchmarks (Jan 2026), EGO was tested against industry standards (PSO, DE, GA) in <strong>100-Dimensional environments</strong>.
     </p>
 
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>The "Step" Test (100D)</h3>
+        <p class="stat-desc">Navigating flat plateaus where gradients die.</p>
+        <div class="stat-comparison">
+          <div class="stat-row">
+            <span>PSO Loss:</span> <span class="bad-score">274,000.0</span>
+          </div>
+          <div class="stat-row">
+            <span>EGO Loss:</span> <span class="good-score">1.25</span>
+          </div>
+        </div>
+        <p class="stat-winner">99.9% Efficiency Gain</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>The "Rosenbrock" Valley (100D)</h3>
+        <p class="stat-desc">Escaping deceptive local minima.</p>
+        <div class="stat-comparison">
+          <div class="stat-row">
+            <span>DE Loss:</span> <span class="bad-score">1,880.0</span>
+          </div>
+          <div class="stat-row">
+            <span>EGO Loss:</span> <span class="good-score">538.0</span>
+          </div>
+        </div>
+        <p class="stat-winner">3x More Accurate</p>
+      </div>
+    </div>
   </section>
 
   <section class="project-section glass">
@@ -81,13 +103,38 @@
     Future extensions: <strong>neural architecture search</strong> and <strong>ML hyperparameter tuning</strong>.</p>
   </section>
 
+  <section class="project-section glass">
+    <h2>terminal-install</h2>
+      <div class="stat-card">
+        <code>pip install ego-optimizer</code>
+      </div>
+    </section>
+
+  <section class="project-section glass">
+    <h2>Official Paper & Documentation</h2>
+      <div class="button-group">
+        <a href="https://pypi.org/project/ego-optimizer/" class="btn-primary">View on PyPI</a>
+        <br>
+        <a href="/assets/EGO_Analysis_2026.pdf" target="_blank" class="btn-secondary">Read the Paper (PDF)</a>
+      </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <div class="footer-links"><a href="/index.html#features">Skills</a><a href="/index.html#showcase">Projects</a><a href="/index.html#timeline">Journey</a><a href="/index.html#contact">Contact</a></div>
-      <p>&copy; 2025 Azar Adham. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="../index.html#features">Skills</a>
+        <a href="../index.html#showcase">Projects</a>
+        <a href="../index.html#timeline">Journey</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2026 Azar Adham.<br> Sole Maintainer of EGO-Optimizer.</p>
+        <p class="license-text">Algorithm available under MIT License for academic use.</p>
+      </div>
     </div>
   </footer>
-  <script src="/scripts.js"></script>
+
+  <script src="../scripts.js"></script>
 </body>
 </html>
