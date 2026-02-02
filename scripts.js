@@ -37,46 +37,55 @@ function getHeaderOffset() {
     return header ? header.offsetHeight + 20 : 80; // fallback
 }
 
-// Smooth scrolling with header offset + gentle bounce
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const targetId = this.getAttribute('href');
-    if (!targetId || targetId === '#') return;
-    const target = document.querySelector(targetId);
+/* ============================
+   SHARED LUXURY SCROLL ENGINE
+============================ */
+// 1. The reusable function (The Engine)
+function smoothScrollTo(targetSelector) {
+    const target = document.querySelector(targetSelector);
     if (!target) return;
 
-    e.preventDefault();
+    // --- TUNING KNOBS ---
+    const headerOffset = 45; // Reduced from 60 -> 45 (Closer gap!)
+    const duration = 2000;   // 2.0s (Slower than before for maximum smoothness)
+    // --------------------
 
-    const headerOffset = getHeaderOffset();
     const elementTop = target.getBoundingClientRect().top + window.pageYOffset;
     const offsetTop = elementTop - headerOffset;
-
     const start = window.pageYOffset;
     const distance = offsetTop - start;
-    const duration = 1000; // slower (1s)
-
     let startTime = null;
 
-    function easeOutBack(t) {
-      // gentler overshoot
-      const c1 = 1.10158;  
-      const c3 = c1 + 1;
-      return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+    function easeOutExpo(t) {
+        return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
     }
 
     function animation(currentTime) {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const progress = Math.min(timeElapsed / duration, 1);
-      const ease = easeOutBack(progress);
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        
+        const ease = easeOutExpo(progress);
+        window.scrollTo(0, start + distance * ease);
 
-      window.scrollTo(0, start + distance * ease);
-
-      if (timeElapsed < duration) requestAnimationFrame(animation);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
     }
 
     requestAnimationFrame(animation);
-  });
+}
+
+// 2. Attach it to your Navbar Links (Manual Clicks)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        
+        // Handle "../index.html#section" links
+        const cleanId = targetId.includes('#') ? '#' + targetId.split('#')[1] : targetId;
+        
+        e.preventDefault();
+        smoothScrollTo(cleanId); // <--- Call the engine
+    });
 });
 
 // Active menu item highlighting
@@ -91,7 +100,7 @@ function updateActiveMenuItem() {
     for (const section of sections) {
         const top = section.offsetTop;
         const height = section.offsetHeight;
-        if (scrollPos >= top - 50 && scrollPos < top + height - 50) {            currentSection = section.id;
+        if (scrollPos >= top - 50 && scrollPos < top + height - 50) {currentSection = section.id;
         }
     }
 
@@ -216,44 +225,37 @@ if (submitBtn) {
     });
 }
 
-/* ============================\
-   AI CHATBOT LOGIC
+/* ============================
+   NEW: CHATBOT & NAVIGATOR BRAIN
 ============================ */
-
 let welcomeSent = false;
 
-// --- 1. CHAT TOGGLE LOGIC ---
 function toggleChat() {
     const chatContainer = document.getElementById('chat-container');
     chatContainer.classList.toggle('hidden');
     
     if (!chatContainer.classList.contains('hidden') && !welcomeSent) {
         const msgArea = document.getElementById('chat-messages');
-        
-        // Initial Welcome Message with Action Buttons
         msgArea.innerHTML += `
             <div class="bot-msg">
                 Hello! I'm Azar's AI assistant. 🤖 <br><br>
                 How can I help you explore my work today?
                 <div class="action-buttons-container">
-                    <button class="action-btn" onclick="quickAsk('Tell me about yourself and your background')">👨‍💻 About Me</button>
-                    <button class="action-btn" onclick="quickAsk('Tell me about the EGO-Optimizer algorithm')">🚀 EGO-Optimizer</button>
-                    <button class="action-btn" onclick="quickAsk('What are your top technical skills?')">💻 Tech Skills</button>
+                    <button class="action-btn" onclick="quickAsk('Tell me about yourself')">👨‍💻 About Me</button>
+                    <button class="action-btn" onclick="quickAsk('Tell me about the EGO-Optimizer')">🚀 EGO-Optimizer</button>
+                    <button class="action-btn" onclick="quickAsk('What are your technical skills?')">💻 Tech Skills</button>
                 </div>
             </div>`;
-            
         welcomeSent = true;
         msgArea.scrollTo({ top: msgArea.scrollHeight, behavior: 'smooth' });
     }
 
     if (!chatContainer.classList.contains('hidden')) {
-        // Safe focus check
         const input = document.getElementById('user-input');
         if (input) input.focus();
     }
 }
 
-// --- 2. QUICK QUESTION LOGIC ---
 function quickAsk(question) {
     const input = document.getElementById('user-input');
     if (input) {
@@ -262,24 +264,43 @@ function quickAsk(question) {
     }
 }
 
-// --- 3. SEND MESSAGE CORE LOGIC (With Resume Support) ---
 async function sendMessage() {
     const input = document.getElementById('user-input');
     const msgArea = document.getElementById('chat-messages');
     
-    if (!input || !msgArea) return; // Safety check
+    if (!input || !msgArea) return;
 
     const text = input.value.trim();
     if (!text) return;
 
-    // Add user message to UI
+    // --- AI NAVIGATOR: Connected to Luxury Engine ---
+    const lowerText = text.toLowerCase();
+    
+    // 1. Contact
+    if (lowerText.includes('contact') || lowerText.includes('email') || lowerText.includes('reach') || lowerText.includes('hire')) {
+        setTimeout(() => smoothScrollTo('#contact'), 500); // Uses the slow engine
+    }
+    
+    // 2. Projects
+    if (lowerText.includes('project') || lowerText.includes('work') || lowerText.includes('portfolio') || lowerText.includes('showcase') || lowerText.includes('ego')) {
+        setTimeout(() => smoothScrollTo('#showcase'), 500);
+    }
+
+    // 3. Journey
+    if (lowerText.includes('journey') || lowerText.includes('experience') || lowerText.includes('history') || lowerText.includes('education') || lowerText.includes('about')) {
+        setTimeout(() => smoothScrollTo('#timeline'), 500);
+    }
+
+    // 4. Skills
+    if (lowerText.includes('skill') || lowerText.includes('tech') || lowerText.includes('stack') || lowerText.includes('coding')) {
+        setTimeout(() => smoothScrollTo('#features'), 500);
+    }
+    // ------------------------------------------------
+
     msgArea.innerHTML += `<div class="user-msg">${text}</div>`;
     input.value = '';
-    
-    // Auto-scroll to bottom immediately
     msgArea.scrollTo({ top: msgArea.scrollHeight, behavior: 'smooth' });
 
-    // Add "Thinking..." placeholder with a unique ID
     const loadingId = "loading-" + Date.now();
     msgArea.innerHTML += `<div class="bot-msg" id="${loadingId}"><i class="fas fa-circle-notch fa-spin"></i> Thinking...</div>`;
     msgArea.scrollTo({ top: msgArea.scrollHeight, behavior: 'smooth' });
@@ -294,16 +315,11 @@ async function sendMessage() {
         const data = await response.json();
         const botMsgDiv = document.getElementById(loadingId);
         
-        // --- RESUME BUTTON FIX START ---
         let botText = data.answer;
-        let resumeButtonHtml = ""; // Holder for the button HTML
+        let resumeButtonHtml = ""; 
         
-        // Check for the Secret Signal
         if (botText.includes("||RESUME||")) {
-            // Remove the signal from the text so Markdown doesn't see it
             botText = botText.replace("||RESUME||", "");
-            
-            // Create the Button HTML separately
             resumeButtonHtml = `
                 <div style="margin-top: 15px;">
                     <a href="assets/Azar_Adham_CV.pdf" download class="resume-btn" style="display: inline-flex; align-items: center; gap: 8px; background-color: #EF4444; color: white; padding: 10px 16px; border-radius: 8px; text-decoration: none; font-weight: bold; font-family: sans-serif;">
@@ -313,30 +329,25 @@ async function sendMessage() {
             `;
         }
 
-        // Render Markdown FIRST, then append the HTML button manually
         if (typeof marked !== 'undefined') {
              botMsgDiv.innerHTML = marked.parse(botText) + resumeButtonHtml;
         } else {
              botMsgDiv.innerHTML = botText + resumeButtonHtml;
         }
-        // --- RESUME BUTTON FIX END ---
         
     } catch (err) {
         const botMsgDiv = document.getElementById(loadingId);
         if (botMsgDiv) botMsgDiv.innerText = "System offline. Please try again later.";
-        console.error("Chat Error:", err);
     }
     
-    // Final smooth scroll
     setTimeout(() => {
         msgArea.scrollTo({ top: msgArea.scrollHeight, behavior: 'smooth' });
     }, 100);
 }
 
-// --- 4. HEALTH CHECK LOGIC (Green Dot) ---
+// Health Check & Initializers
 async function checkServerStatus() {
     const dot = document.getElementById('status-dot');
-    
     if (!dot) return; 
 
     try {
@@ -356,52 +367,161 @@ async function checkServerStatus() {
     }
 }
 
-// --- 5. GLOBAL EVENT LISTENERS (Consolidated) ---
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // A. Input Enter Key Listener
     const input = document.getElementById('user-input');
     if (input) {
         input.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter') {
-                sendMessage();
-            }
+            if (event.key === 'Enter') sendMessage();
         });
-
-        // B. Mobile Keyboard Scroll Fix
         input.addEventListener('focus', () => {
             const chatMessages = document.getElementById('chat-messages');
             if (chatMessages) {
                 setTimeout(() => {
-                    chatMessages.scrollTo({
-                        top: chatMessages.scrollHeight,
-                        behavior: 'smooth'
-                    });
+                    chatMessages.scrollTo({ top: chatMessages.scrollHeight, behavior: 'smooth' });
                 }, 300);
             }
         });
     }
 
-    // C. Click Listener for Links (Close chat on navigation)
     const chatMessages = document.getElementById('chat-messages');
     if (chatMessages) {
         chatMessages.addEventListener('click', (e) => {
-            // Use closest() to handle clicks on icons inside the <a> tag
             const link = e.target.closest('a');
-            if (link) {
-                // If it's a normal link (not the resume download), close chat
-                if (!link.classList.contains('resume-btn')) {
-                    setTimeout(() => {
-                        toggleChat();
-                    }, 300);
-                }
+            if (link && !link.classList.contains('resume-btn')) {
+                setTimeout(() => toggleChat(), 300);
             }
         });
-    } else {
-        console.warn("Chat messages area not found. Check index.html IDs.");
     }
 
-    // D. Start Server Health Check
     checkServerStatus();
     setInterval(checkServerStatus, 30000); 
 });
+
+/* ============================
+   VOICE RECOGNITION (The Ears)
+============================ */
+function setupVoiceMode() {
+    const voiceBtn = document.getElementById('voice-btn');
+    const chatInput = document.getElementById('user-input');
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!voiceBtn || !chatInput || !SpeechRecognition) {
+        if (voiceBtn) voiceBtn.style.display = 'none';
+        return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.continuous = false; 
+    recognition.lang = 'en-US'; 
+
+    voiceBtn.addEventListener('click', () => {
+        if (voiceBtn.classList.contains('listening')) {
+            recognition.stop(); // This triggers onend
+        } else {
+            try {
+                recognition.start();
+            } catch (e) {
+                console.error("Speech recognition already started:", e);
+            }
+        }
+    });
+
+    recognition.onstart = () => {
+        voiceBtn.classList.add('listening');
+        voiceBtn.innerHTML = '<i class="fas fa-stop"></i>';
+        chatInput.placeholder = "Listening...";
+    };
+
+    // THE FIX: Ensure the mic shuts down completely
+    recognition.onend = () => {
+        voiceBtn.classList.remove('listening');
+        voiceBtn.innerHTML = '<i class="fas fa-microphone"></i>';
+        chatInput.placeholder = "Type or speak...";
+        
+        // Force the browser to release the microphone hardware
+        if (recognition.stream) {
+            recognition.stream.getTracks().forEach(track => track.stop());
+        }
+    };
+
+    recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        chatInput.value = transcript;
+        
+        // Immediately stop recognition to trigger the 'onend' hardware release
+        recognition.stop();
+
+        setTimeout(() => {
+            if (typeof sendMessage === "function") {
+                sendMessage();
+            }
+        }, 600);
+    };
+
+    recognition.onerror = (event) => {
+        console.error("Voice Error:", event.error);
+        voiceBtn.classList.remove('listening');
+        voiceBtn.innerHTML = '<i class="fas fa-microphone-slash"></i>';
+        chatInput.placeholder = "Error: " + event.error;
+    };
+}
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', setupVoiceMode);
+
+// admin.html - Final JS
+async function fetchStats() {
+    const passInput = document.getElementById('admin-pass').value;
+    const outputDiv = document.getElementById('stats-output');
+    
+    try {
+        // We use the exact name FastAPI expects
+        const response = await fetch('https://portfolio-backend-mn66.onrender.com/admin-stats', {
+            method: 'GET',
+            headers: { 
+                'x-admin-token': passInput // Sending it lowercase is safer
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error("Invalid password or unauthorized access.");
+        }
+
+        const logs = await response.json();
+        
+        if (logs.length === 0) {
+            outputDiv.innerHTML = "<p>Database is connected, but no chats recorded yet!</p>";
+            return;
+        }
+
+        // Build the table manually to avoid "Not Defined" errors
+        let tableHtml = `
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Location</th>
+                        <th>Company</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>`;
+        
+        logs.forEach(log => {
+            tableHtml += `
+                <tr>
+                    <td>${log.timestamp}</td>
+                    <td style="color: #10B981">${log.location}</td>
+                    <td style="color: #F59E0B">${log.company}</td>
+                    <td>"${log.query}"</td>
+                </tr>`;
+        });
+
+        tableHtml += `</tbody></table>`;
+        outputDiv.innerHTML = tableHtml;
+
+    } catch (err) {
+        alert(err.message);
+        console.error("Fetch error:", err);
+    }
+}

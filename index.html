@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:title" content="Azar Adham | AI & Computer Engineering Portfolio">
+  <meta property="og:description" content="Explore my projects, including the EGO-Optimizer, and chat with my AI assistant.">
+  <meta property="og:image" content="https://azaradham.com/assets/preview-thumbnail.jpg"> 
+  <meta property="og:url" content="https://azaradham.com">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Azar Adham | Portfolio</title>
   <link rel="icon" type="image/x-icon" href="/assets/fivcon.ico?v=2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -345,13 +350,20 @@
     <button class="chat-close-btn" onclick="toggleChat()">
         <i class="fas fa-times"></i>
     </button>
-</div>
-    <div id="chat-messages"></div>
-    <div id="chat-input-area">
-        <input type="text" id="user-input" placeholder="Ask about my projects..." onkeypress="handleKeyPress(event)">
-        <button onclick="sendMessage()">Send</button>
-    </div>
   </div>
+    <div id="chat-messages"></div>
+    <div class="chat-input-area">
+    <button id="voice-btn" class="icon-btn" title="Speak">
+        <i class="fas fa-microphone"></i>
+    </button>
+    
+    <input type="text" id="user-input" placeholder="Type or speak..." autocomplete="off">
+    
+    <button id="send-btn" class="icon-btn" onclick="sendMessage()" title="Send">
+        <i class="fas fa-paper-plane"></i>
+    </button>
+  </div>
+</div>
 
 </body>
 </html>

@@ -1846,3 +1846,95 @@ section {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }
+
+
+html {
+    scroll-behavior: auto !important;
+}
+
+/* styles.css - Voice Mode */
+#voice-btn {
+    background: transparent;
+    border: none;
+    color: #64748b; /* Gray when idle */
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: all 0.2s ease;
+}
+
+#voice-btn:hover {
+    color: #0EA5E9; /* Blue on hover */
+    transform: scale(1.1);
+}
+
+#voice-btn.listening {
+    color: #EF4444; /* Red when recording */
+    animation: pulse-red 1.5s infinite;
+}
+
+@keyframes pulse-red {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* --- MODERN CHAT INPUT BAR --- */
+.chat-input-area {
+    display: flex; /* Forces them into a row */
+    align-items: center; /* Centers them vertically */
+    gap: 10px; /* Space between buttons */
+    padding: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2); /* Slight dark tint */
+}
+
+/* The Input Field (Takes up all space) */
+.chat-input-area input {
+    flex: 1; /* Magic setting: Fills the gap between buttons */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px; /* Rounded pill shape */
+    padding: 10px 15px;
+    color: white;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.chat-input-area input:focus {
+    border-color: #0EA5E9; /* Blue glow when typing */
+}
+
+/* The Buttons (Mic & Send) */
+.icon-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8; /* Cool gray */
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:hover {
+    color: #0EA5E9; /* Blue on hover */
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Voice Active Animation (Red Pulse) */
+#voice-btn.listening {
+    color: #EF4444;
+    background: rgba(239, 68, 68, 0.1);
+    animation: pulse-red 1.5s infinite;
+}
+
+@keyframes pulse-red {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
