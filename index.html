@@ -331,6 +331,24 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="../scripts.js"></script>
+
+  <button id="chat-toggle" onclick="toggleChat()">Ask my AI</button>
+
+  <div id="chat-container" class="hidden">
+    <div id="chat-header">
+      <span>Azar's AI Assistant</span>
+      <button class="chat-close-btn" onclick="toggleChat()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div id="chat-messages"></div>
+    <div id="chat-input-area">
+        <input type="text" id="user-input" placeholder="Ask about my projects..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
 </body>
 </html>

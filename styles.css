@@ -1540,3 +1540,201 @@ section {
     text-decoration: none;
     color: inherit;
 }
+
+/* ---- CONSOLIDATED CHAT BOX (NEURAL GLASS THEME) ---- */
+
+#chat-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 12px 24px;
+    background: linear-gradient(45deg, #0EA5E9, #2563EB); /* Matches theme primary blue */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+    z-index: 1001;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#chat-toggle:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.6);
+}
+
+#chat-container {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    width: 380px;
+    max-width: calc(100vw - 60px);
+    height: 500px;
+    background: rgba(15, 23, 42, 0.9); /* Dark glass for contrast */
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: bottom right;
+}
+
+#chat-container.hidden {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    pointer-events: none;
+    display: flex !important; /* Keep display flex to allow transitions */
+}
+
+#chat-header {
+    background: rgba(255, 255, 255, 0.05);
+    color: #0EA5E9; /* Cyan highlight */
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 700;
+}
+
+/* ---- UNIFORM CLOSE BUTTON ---- */
+.chat-close-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e2e8f0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.chat-close-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.4);
+    color: #f87171;
+    transform: rotate(90deg);
+}
+
+#chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    scrollbar-width: thin;
+    scrollbar-color: #0EA5E9 transparent;
+    overscroll-behavior: contain; /* Prevents main site from scrolling */
+}
+
+/* Chat Bubbles */
+.bot-msg, .user-msg {
+    padding: 12px 16px;
+    border-radius: 15px;
+    max-width: 85%;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    animation: fadeInSlide 0.3s ease forwards;
+}
+
+.bot-msg {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f8fafc; /* High contrast off-white text */
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.user-msg {
+    background: linear-gradient(45deg, #0EA5E9, #2563EB);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+#chat-input-area {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#chat-input-area input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: white;
+    outline: none;
+}
+
+#chat-input-area input:focus {
+    border-color: #0EA5E9;
+}
+
+#chat-input-area button {
+    background: #0EA5E9;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+#chat-input-area button:hover {
+    background: #0284c7;
+}
+
+@keyframes fadeInSlide {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Styling for Markdown elements inside the bot response */
+.bot-msg p { margin-bottom: 10px; }
+.bot-msg ul, .bot-msg ol { 
+    margin-left: 1.5rem; 
+    margin-bottom: 10px; 
+    color: #e2e8f0; 
+}
+.bot-msg li { margin-bottom: 5px; }
+.bot-msg strong { color: #0EA5E9; } /* Make bold text match your theme blue */
+
+/* Fix for the spin icon in "Thinking..." */
+.fa-spin {
+    margin-right: 8px;
+    color: #0EA5E9;
+}
+
+/* Styling for clickable links inside the bot response */
+.bot-msg a {
+    color: #0EA5E9; /* Your theme's bright blue */
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1px dashed rgba(14, 165, 233, 0.4);
+    transition: all 0.2s ease;
+}
+
+.bot-msg a:hover {
+    color: #22d3ee; /* Even brighter cyan on hover */
+    border-bottom: 1px solid #22d3ee;
+    background: rgba(14, 165, 233, 0.1);
+    border-radius: 4px;
+    padding: 0 2px;
+}

@@ -215,3 +215,96 @@ if (submitBtn) {
         }, 1500);
     });
 }
+
+/* ============================\
+   AI CHATBOT LOGIC
+============================ */
+
+let welcomeSent = false;
+
+function toggleChat() {
+    const chatContainer = document.getElementById('chat-container');
+    chatContainer.classList.toggle('hidden');
+    
+    // 1. Send welcome message only the first time the chat is opened
+    if (!chatContainer.classList.contains('hidden') && !welcomeSent) {
+        const msgArea = document.getElementById('chat-messages');
+        msgArea.innerHTML += `
+            <div class="bot-msg">
+                Hello! I'm Azar's AI assistant. 🤖 <br><br>
+                I can tell you about his work on the <b>EGO-Optimizer</b>, his <b>Voice-Activated Wheelchair</b>, or his experience as a <b>Computer Engineer</b>. What would you like to know?
+            </div>`;
+        welcomeSent = true;
+        msgArea.scrollTo({ top: msgArea.scrollHeight, behavior: 'smooth' });
+    }
+
+    // 2. Focus input automatically when opened
+    if (!chatContainer.classList.contains('hidden')) {
+        document.getElementById('user-input').focus();
+    }
+}
+
+async function sendMessage() {
+    const input = document.getElementById('user-input');
+    const msgArea = document.getElementById('chat-messages');
+    const text = input.value.trim();
+
+    if (!text) return;
+
+    // Add user message to UI
+    msgArea.innerHTML += `<div class="user-msg">${text}</div>`;
+    input.value = '';
+    
+    // Auto-scroll to bottom immediately
+    msgArea.scrollTo({ top: msgArea.scrollHeight, behavior: 'smooth' });
+
+    // Add "Thinking..." placeholder with a unique ID
+    const loadingId = "loading-" + Date.now();
+    msgArea.innerHTML += `<div class="bot-msg" id="${loadingId}"><i class="fas fa-circle-notch fa-spin"></i> Thinking...</div>`;
+    msgArea.scrollTo({ top: msgArea.scrollHeight, behavior: 'smooth' });
+
+    try {
+        const response = await fetch("https://portfolio-backend-mn66.onrender.com/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ query: text })
+        });
+        
+        const data = await response.json();
+        const botMsgDiv = document.getElementById(loadingId);
+        
+        // 3. RENDER MARKDOWN (Fixes the stars ** and bullets *)
+        botMsgDiv.innerHTML = marked.parse(data.answer);
+        
+    } catch (err) {
+        document.getElementById(loadingId).innerText = "System offline. Please try again later.";
+    }
+    
+    // Final smooth scroll after response arrives
+    setTimeout(() => {
+        msgArea.scrollTo({ top: msgArea.scrollHeight, behavior: 'smooth' });
+    }, 100);
+}
+
+// 4. ENTER KEY SUPPORT
+document.addEventListener('DOMContentLoaded', () => {
+    const input = document.getElementById('user-input');
+    if (input) {
+        input.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    }
+});
+
+// Add this inside your DOMContentLoaded listener or at the bottom
+document.getElementById('chat-messages').addEventListener('click', (e) => {
+    // If the clicked element is a link (<a> tag)
+    if (e.target.tagName === 'A') {
+        // Wait a tiny bit so the user sees the click, then close the chat
+        setTimeout(() => {
+            toggleChat();
+        }, 300);
+    }
+});
