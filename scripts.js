@@ -308,3 +308,18 @@ document.getElementById('chat-messages').addEventListener('click', (e) => {
         }, 300);
     }
 });
+
+const userInput = document.getElementById('user-input');
+const chatMessages = document.getElementById('chat-messages');
+
+if (userInput) {
+    // When the user taps the input, wait for the keyboard to slide up, then scroll
+    userInput.addEventListener('focus', () => {
+        setTimeout(() => {
+            chatMessages.scrollTo({
+                top: chatMessages.scrollHeight,
+                behavior: 'smooth'
+            });
+        }, 300); // 300ms is roughly how long the keyboard takes to appear
+    });
+}

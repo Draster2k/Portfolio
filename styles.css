@@ -1738,3 +1738,39 @@ section {
     border-radius: 4px;
     padding: 0 2px;
 }
+
+#chat-container {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    width: 380px;
+    /* Change fixed height to max-height for mobile scaling */
+    height: 500px; 
+    max-height: calc(100dvh - 120px); /* Use 'dvh' (dynamic viewport height) */
+    max-width: calc(100vw - 60px);
+    
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1001;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Mobile specific tweaks */
+@media (max-width: 768px) {
+    #chat-container {
+        right: 15px;
+        bottom: 80px;
+        width: calc(100vw - 30px);
+        max-height: calc(100dvh - 100px);
+    }
+    
+    #chat-toggle {
+        right: 15px;
+        bottom: 15px;
+    }
+}
