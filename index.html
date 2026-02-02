@@ -338,11 +338,14 @@
 
   <div id="chat-container" class="hidden">
     <div id="chat-header">
-      <span>Azar's AI Assistant</span>
-      <button class="chat-close-btn" onclick="toggleChat()">
-        <i class="fas fa-times"></i>
-      </button>
+    <div style="display: flex; align-items: center; gap: 8px;">
+        <span id="status-dot" class="dot-offline"></span>
+        <span>Azar's AI Assistant</span>
     </div>
+    <button class="chat-close-btn" onclick="toggleChat()">
+        <i class="fas fa-times"></i>
+    </button>
+</div>
     <div id="chat-messages"></div>
     <div id="chat-input-area">
         <input type="text" id="user-input" placeholder="Ask about my projects..." onkeypress="handleKeyPress(event)">

@@ -222,6 +222,7 @@ if (submitBtn) {
 
 let welcomeSent = false;
 
+// --- 1. CHAT TOGGLE LOGIC ---
 function toggleChat() {
     const chatContainer = document.getElementById('chat-container');
     chatContainer.classList.toggle('hidden');
@@ -229,7 +230,7 @@ function toggleChat() {
     if (!chatContainer.classList.contains('hidden') && !welcomeSent) {
         const msgArea = document.getElementById('chat-messages');
         
-        // Inside your toggleChat() function...
+        // Initial Welcome Message with Action Buttons
         msgArea.innerHTML += `
             <div class="bot-msg">
                 Hello! I'm Azar's AI assistant. 🤖 <br><br>
@@ -246,25 +247,29 @@ function toggleChat() {
     }
 
     if (!chatContainer.classList.contains('hidden')) {
-        document.getElementById('user-input').focus();
+        // Safe focus check
+        const input = document.getElementById('user-input');
+        if (input) input.focus();
     }
 }
 
+// --- 2. QUICK QUESTION LOGIC ---
 function quickAsk(question) {
     const input = document.getElementById('user-input');
-    
-    // 1. Fill the text box with the question
-    input.value = question;
-    
-    // 2. Trigger the existing sendMessage function automatically
-    sendMessage();
+    if (input) {
+        input.value = question;
+        sendMessage();
+    }
 }
 
+// --- 3. SEND MESSAGE CORE LOGIC (With Resume Support) ---
 async function sendMessage() {
     const input = document.getElementById('user-input');
     const msgArea = document.getElementById('chat-messages');
-    const text = input.value.trim();
+    
+    if (!input || !msgArea) return; // Safety check
 
+    const text = input.value.trim();
     if (!text) return;
 
     // Add user message to UI
@@ -289,21 +294,72 @@ async function sendMessage() {
         const data = await response.json();
         const botMsgDiv = document.getElementById(loadingId);
         
-        // 3. RENDER MARKDOWN (Fixes the stars ** and bullets *)
-        botMsgDiv.innerHTML = marked.parse(data.answer);
+        // --- RESUME BUTTON FIX START ---
+        let botText = data.answer;
+        let resumeButtonHtml = ""; // Holder for the button HTML
+        
+        // Check for the Secret Signal
+        if (botText.includes("||RESUME||")) {
+            // Remove the signal from the text so Markdown doesn't see it
+            botText = botText.replace("||RESUME||", "");
+            
+            // Create the Button HTML separately
+            resumeButtonHtml = `
+                <div style="margin-top: 15px;">
+                    <a href="assets/Azar_Adham_CV.pdf" download class="resume-btn" style="display: inline-flex; align-items: center; gap: 8px; background-color: #EF4444; color: white; padding: 10px 16px; border-radius: 8px; text-decoration: none; font-weight: bold; font-family: sans-serif;">
+                        <i class="fas fa-file-pdf"></i> Download Official Resume
+                    </a>
+                </div>
+            `;
+        }
+
+        // Render Markdown FIRST, then append the HTML button manually
+        if (typeof marked !== 'undefined') {
+             botMsgDiv.innerHTML = marked.parse(botText) + resumeButtonHtml;
+        } else {
+             botMsgDiv.innerHTML = botText + resumeButtonHtml;
+        }
+        // --- RESUME BUTTON FIX END ---
         
     } catch (err) {
-        document.getElementById(loadingId).innerText = "System offline. Please try again later.";
+        const botMsgDiv = document.getElementById(loadingId);
+        if (botMsgDiv) botMsgDiv.innerText = "System offline. Please try again later.";
+        console.error("Chat Error:", err);
     }
     
-    // Final smooth scroll after response arrives
+    // Final smooth scroll
     setTimeout(() => {
         msgArea.scrollTo({ top: msgArea.scrollHeight, behavior: 'smooth' });
     }, 100);
 }
 
-// 4. ENTER KEY SUPPORT
+// --- 4. HEALTH CHECK LOGIC (Green Dot) ---
+async function checkServerStatus() {
+    const dot = document.getElementById('status-dot');
+    
+    if (!dot) return; 
+
+    try {
+        const response = await fetch('https://portfolio-backend-mn66.onrender.com/health', {
+            method: 'GET',
+            mode: 'cors',
+            cache: 'no-store'
+        });
+        
+        if (response.ok) {
+            dot.className = 'dot-online';
+        } else {
+            dot.className = 'dot-offline';
+        }
+    } catch (error) {
+        dot.className = 'dot-offline';
+    }
+}
+
+// --- 5. GLOBAL EVENT LISTENERS (Consolidated) ---
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // A. Input Enter Key Listener
     const input = document.getElementById('user-input');
     if (input) {
         input.addEventListener('keydown', (event) => {
@@ -311,32 +367,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 sendMessage();
             }
         });
+
+        // B. Mobile Keyboard Scroll Fix
+        input.addEventListener('focus', () => {
+            const chatMessages = document.getElementById('chat-messages');
+            if (chatMessages) {
+                setTimeout(() => {
+                    chatMessages.scrollTo({
+                        top: chatMessages.scrollHeight,
+                        behavior: 'smooth'
+                    });
+                }, 300);
+            }
+        });
     }
-});
 
-// Add this inside your DOMContentLoaded listener or at the bottom
-document.getElementById('chat-messages').addEventListener('click', (e) => {
-    // If the clicked element is a link (<a> tag)
-    if (e.target.tagName === 'A') {
-        // Wait a tiny bit so the user sees the click, then close the chat
-        setTimeout(() => {
-            toggleChat();
-        }, 300);
+    // C. Click Listener for Links (Close chat on navigation)
+    const chatMessages = document.getElementById('chat-messages');
+    if (chatMessages) {
+        chatMessages.addEventListener('click', (e) => {
+            // Use closest() to handle clicks on icons inside the <a> tag
+            const link = e.target.closest('a');
+            if (link) {
+                // If it's a normal link (not the resume download), close chat
+                if (!link.classList.contains('resume-btn')) {
+                    setTimeout(() => {
+                        toggleChat();
+                    }, 300);
+                }
+            }
+        });
+    } else {
+        console.warn("Chat messages area not found. Check index.html IDs.");
     }
+
+    // D. Start Server Health Check
+    checkServerStatus();
+    setInterval(checkServerStatus, 30000); 
 });
-
-const userInput = document.getElementById('user-input');
-const chatMessages = document.getElementById('chat-messages');
-
-if (userInput) {
-    // When the user taps the input, wait for the keyboard to slide up, then scroll
-    userInput.addEventListener('focus', () => {
-        setTimeout(() => {
-            chatMessages.scrollTo({
-                top: chatMessages.scrollHeight,
-                behavior: 'smooth'
-            });
-        }, 300); // 300ms is roughly how long the keyboard takes to appear
-    });
-}
-

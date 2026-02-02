@@ -1801,3 +1801,48 @@ section {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
+#status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-online {
+    background-color: #10B981; /* Emerald Green */
+    box-shadow: 0 0 8px #10B981;
+    animation: pulse 2s infinite;
+}
+
+.dot-offline {
+    background-color: #EF4444; /* Red */
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(0.95); opacity: 1; }
+}
+
+/* Resume Button Style */
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #EF4444; /* PDF Red */
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: transform 0.2s, background-color 0.2s;
+    margin-top: 8px;
+}
+
+.resume-btn:hover {
+    background-color: #DC2626;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
