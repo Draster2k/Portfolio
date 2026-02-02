@@ -226,22 +226,38 @@ function toggleChat() {
     const chatContainer = document.getElementById('chat-container');
     chatContainer.classList.toggle('hidden');
     
-    // 1. Send welcome message only the first time the chat is opened
     if (!chatContainer.classList.contains('hidden') && !welcomeSent) {
         const msgArea = document.getElementById('chat-messages');
+        
+        // Inside your toggleChat() function...
         msgArea.innerHTML += `
             <div class="bot-msg">
                 Hello! I'm Azar's AI assistant. 🤖 <br><br>
-                I can tell you about his work on the <b>EGO-Optimizer</b>, or his experience as a <b>Computer Engineer</b>. What would you like to know?
+                How can I help you explore my work today?
+                <div class="action-buttons-container">
+                    <button class="action-btn" onclick="quickAsk('Tell me about yourself and your background')">👨‍💻 About Me</button>
+                    <button class="action-btn" onclick="quickAsk('Tell me about the EGO-Optimizer algorithm')">🚀 EGO-Optimizer</button>
+                    <button class="action-btn" onclick="quickAsk('What are your top technical skills?')">💻 Tech Skills</button>
+                </div>
             </div>`;
+            
         welcomeSent = true;
         msgArea.scrollTo({ top: msgArea.scrollHeight, behavior: 'smooth' });
     }
 
-    // 2. Focus input automatically when opened
     if (!chatContainer.classList.contains('hidden')) {
         document.getElementById('user-input').focus();
     }
+}
+
+function quickAsk(question) {
+    const input = document.getElementById('user-input');
+    
+    // 1. Fill the text box with the question
+    input.value = question;
+    
+    // 2. Trigger the existing sendMessage function automatically
+    sendMessage();
 }
 
 async function sendMessage() {
@@ -323,3 +339,4 @@ if (userInput) {
         }, 300); // 300ms is roughly how long the keyboard takes to appear
     });
 }
+
