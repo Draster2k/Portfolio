@@ -232,7 +232,7 @@ function toggleChat() {
         msgArea.innerHTML += `
             <div class="bot-msg">
                 Hello! I'm Azar's AI assistant. 🤖 <br><br>
-                I can tell you about his work on the <b>EGO-Optimizer</b>, his <b>Voice-Activated Wheelchair</b>, or his experience as a <b>Computer Engineer</b>. What would you like to know?
+                I can tell you about his work on the <b>EGO-Optimizer</b>, or his experience as a <b>Computer Engineer</b>. What would you like to know?
             </div>`;
         welcomeSent = true;
         msgArea.scrollTo({ top: msgArea.scrollHeight, behavior: 'smooth' });
