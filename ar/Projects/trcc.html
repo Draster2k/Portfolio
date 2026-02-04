@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خوارزمية TRCC | ازر أدهم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body style="text-align:right;">
+  <!-- الخلفية -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+  <div class="neural-lines"><div class="neural-line"></div><div class="neural-line"></div><div class="neural-line"></div></div>
+
+  <!-- القائمة -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index_ar.html">
+          <img src="../assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>ازر أدهم</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index_ar.html#skills">المهارات</a></li>
+        <li><a href="../index_ar.html#showcase">المشاريع</a></li>
+        <li><a href="../index_ar.html#journey">الرحلة</a></li>
+        <li><a href="../index_ar.html#contact">التواصل</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- المقدمة -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">التجميع • الحوسبة المستوحاة من المناعة</div>
+      <h1>TRCC: استجابة الأنسجة وتجميع السيتوكينات</h1>
+      <p>
+        خوارزمية تجميع جديدة مستوحاة من <strong>إشارات السيتوكينات في الجهاز المناعي</strong>.  
+        صُممت للتعامل بشكل أفضل مع <strong>التجمعات غير المحدبة</strong> و<strong>الضجيج</strong> مقارنةً بـ K-Means و DBSCAN.
+      </p>
+    </div>
+  </section>
+
+  <!-- المحتوى -->
+  <section class="project-section glass">
+    <h2>صياغة الخوارزمية</h2>
+    <p>كل نقطة تبعث إشارة سيتوكين تتناسب عكسياً مع المسافة، مع وزن بالكثافة:</p>
+    <p style="text-align:center">
+      $$ S_i = \sum_{j \in N_\epsilon(i)} \exp\Big(-\frac{d(x_i, x_j)^2}{2\sigma^2}\Big) \cdot w_j $$
+    </p>
+    <p>
+      حيث \( S_i \) هي الإشارة عند النقطة \( i \)،  
+      \( d(x_i, x_j) \) هي المسافة الإقليدية،  
+      \( \sigma \) هو عامل الحساسية،  
+      و \( w_j \) هو وزن الكثافة.
+    </p>
+    <p>تُدمج المجموعات إذا كانت المسافة بين مراكزهما أقل من حد معين:</p>
+    <p style="text-align:center">
+      $$ d(C_a, C_b) < D_{\max} $$
+    </p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>النتائج</h2>
+    <ul>
+      <li><strong>البيانات التركيبية:</strong> فصلت بشكل صحيح التجمعات الحلزونية والهلالية والمعينية حيث فشل K-Means.</li>
+      <li><strong>كشف هجمات السيارات:</strong> TRCC + هندسة الميزات حسّنت تجميع الشذوذ بنسبة 12% نقاء مقارنة بـ DBSCAN.</li>
+      <li><strong>تعبير RNA:</strong> حققت درجات Silhouette أعلى على بيانات التعبير الجيني.</li>
+    </ul>
+    <p class="results-equation">
+      Silhouette(TRCC) = 0.71 &nbsp;&nbsp; مقابل &nbsp;&nbsp; DBSCAN = 0.52
+    </p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>الأثر</h2>
+    <p>يفتح TRCC مسارات جديدة لـ <strong>الذكاء الاصطناعي المستوحى من المناعة</strong>.  
+    التطبيقات: أنظمة كشف التطفل (IDS)، التجميع الطبي الحيوي، واكتشاف الشذوذ.</p>
+  </section>
+
+  <!-- التذييل -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="../index_ar.html#features">المهارات</a>
+        <a href="../index_ar.html#showcase">المشاريع</a>
+        <a href="../index_ar.html#timeline">الرحلة</a>
+        <a href="../index_ar.html#contact">التواصل</a>
+      </div>
+      <p>© 2025 ازر أدهم. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script src="../scripts.js"></script>
+</body>
+</html>

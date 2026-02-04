@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Araba Hackleme IDS | Azar Adham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Background -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes">
+    <div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div>
+  </div>
+  <div class="neural-lines">
+    <div class="neural-line"></div><div class="neural-line"></div><div class="neural-line"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index_tr.html">
+          <img src="../assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>AZAR ADHAM</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index_tr.html#skills">Yetenekler</a></li>
+        <li><a href="../index_tr.html#showcase">Projeler</a></li>
+        <li><a href="../index_tr.html#journey">Yolculuk</a></li>
+        <li><a href="../index_tr.html#contact">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">SİBER GÜVENLİK • MAKİNE ÖĞRENMESİ</div>
+      <h1>Araba Hackleme IDS</h1>
+      <p>
+        Kötü niyetli CAN Bus trafiğini tespit eden <strong>Saldırı Tespit Sistemi (IDS)</strong>.<br>
+        <strong>Random Forest</strong> ve özel geliştirdiğim <strong>TRCC kümeleme algoritması</strong> ile oluşturuldu.<br>
+        <strong>Car-Hacking Dataset</strong> üzerinde eğitildi.
+      </p>
+    </div>
+  </section>
+
+  <!-- İçerik -->
+  <section class="project-section glass">
+    <h2>Genel Bakış</h2>
+    <p>Bu proje, <strong>Car-Hacking Dataset</strong> kullanılarak araç içi ağlarda saldırı tespiti için bir <strong>Saldırı Tespit Sistemi (IDS)</strong> geliştirmeye odaklandı. Modern araçlarda kullanılan CAN Bus, <strong>DoS</strong>, <strong>Fuzzy</strong> ve <strong>vites/RPM manipülasyonu</strong> gibi saldırılara karşı savunmasızdır. Amaç, bu anormallikleri makine öğrenmesi teknikleriyle tespit etmekti.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Teknik Özellikler</h2>
+    <ul>
+      <li><strong>Veri Seti:</strong> Car-Hacking Dataset (OCS Lab)</li>
+      <li><strong>Özellikler:</strong> CAN ID sıklığı, zaman farkı, veri bayt desenleri</li>
+      <li><strong>Model:</strong> Random Forest Sınıflandırıcısı (temel model)</li>
+      <li><strong>Özel Algoritma:</strong> TRCC (Tissue Response & Cytokine Clustering)</li>
+      <li><strong>Metrikler:</strong> Doğruluk, saldırı hassasiyeti, ARI, Saflık</li>
+      <li><strong>Çerçeveler:</strong> Python (scikit-learn, pandas, matplotlib, Optuna)</li>
+      <li><strong>Donanım:</strong> CPU + NVIDIA RTX 3060 GPU</li>
+    </ul>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Sonuçlar</h2>
+    <p><strong>Random Forest</strong> modeli %85 doğruluk oranına ve <strong>DoS</strong> ve <strong>Fuzzy</strong> saldırılarında mükemmel hassasiyete ulaştı. <strong>TRCC kümeleme algoritması</strong>, K-Means ve DBSCAN modellerinden daha iyi sonuçlar verdi ve daha yüksek <strong>silhouette</strong> ve <strong>saflık</strong> skorları elde etti.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Zorluklar ve Çözümler</h2>
+    <p>CAN trafiği oldukça dengesizdi; normal veriler saldırı verilerinden çok fazlaydı. Bu sorunu çözmek için <strong>zaman farkı sinyalleri</strong> ve <strong>CAN ID sıklığı</strong> gibi özel özellikler geliştirildi. <strong>TRCC algoritması</strong>, bağışıklık sisteminden ilham alan bir yaklaşım ile etiketlenmemiş verilerde daha sağlam ayrım yapılmasını sağladı.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="../index_tr.html#features">Yetenekler</a>
+        <a href="../index_tr.html#showcase">Projeler</a>
+        <a href="../index_tr.html#timeline">Yolculuk</a>
+        <a href="../index_tr.html#contact">İletişim</a>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2025 Azar Adham. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts.js"></script>
+</body>
+</html>

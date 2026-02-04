@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نظام كشف اختراق السيارات | ازر أدهم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+</head>
+<body style="text-align: right;">
+  <!-- الخلفية -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes">
+    <div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div>
+  </div>
+  <div class="neural-lines">
+    <div class="neural-line"></div><div class="neural-line"></div><div class="neural-line"></div>
+  </div>
+
+  <!-- العنوان -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index_ar.html">
+          <img src="../assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>ازر أدهم</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index_ar.html#skills">المهارات</a></li>
+        <li><a href="../index_ar.html#showcase">المشاريع</a></li>
+        <li><a href="../index_ar.html#journey">الرحلة</a></li>
+        <li><a href="../index_ar.html#contact">التواصل</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- مقدمة -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">الأمن السيبراني • تعلم الآلة</div>
+      <h1>نظام كشف اختراق السيارات</h1>
+      <p>
+        نظام لاكتشاف الهجمات على شبكة <strong>CAN Bus</strong> الخاصة بالسيارات.<br>
+        يعتمد على <strong>Random Forest</strong> وخوارزمية <strong>TRCC</strong> المخصصة للتجميع،<br>
+        باستخدام مجموعة بيانات <strong>Car-Hacking Dataset</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- المحتوى -->
+  <section class="project-section glass">
+    <h2>نظرة عامة</h2>
+    <p>يركز هذا المشروع على بناء <strong>نظام كشف التسلل</strong> لشبكات السيارات باستخدام مجموعة بيانات <strong>Car-Hacking</strong>. تعتمد السيارات الحديثة على شبكة <strong>CAN Bus</strong>، وهي عرضة لهجمات مثل <strong>DoS</strong> و<strong>Fuzzy</strong> وتلاعب <strong>RPM / التروس</strong>. الهدف هو اكتشاف هذه الأنشطة الخبيثة بدقة باستخدام تقنيات تعلم الآلة.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>المواصفات التقنية</h2>
+    <ul>
+      <li><strong>مجموعة البيانات:</strong> Car-Hacking Dataset (OCS Lab)</li>
+      <li><strong>الميزات:</strong> تكرار معرف CAN، فرق الوقت، أنماط البيانات</li>
+      <li><strong>النموذج:</strong> مصنف Random Forest (أساسي)</li>
+      <li><strong>الخوارزمية الخاصة:</strong> TRCC (استجابة الأنسجة وتجميع السيتوكين)</li>
+      <li><strong>المقاييس:</strong> الدقة، حساسية الهجوم، ARI، النقاء</li>
+      <li><strong>الأطر:</strong> Python (scikit-learn, pandas, matplotlib, Optuna)</li>
+      <li><strong>الأجهزة:</strong> CPU + NVIDIA RTX 3060 GPU</li>
+    </ul>
+  </section>
+
+  <section class="project-section glass">
+    <h2>النتائج</h2>
+    <p>حقق نموذج <strong>Random Forest</strong> دقة بنسبة <strong>85%</strong> مع حساسية مثالية لهجمات <strong>DoS</strong> و<strong>Fuzzy</strong>. تفوقت خوارزمية <strong>TRCC</strong> على K-Means وDBSCAN من حيث جودة التجميع وسجلت درجات <strong>Silhouette</strong> و<strong>نقاء</strong> أعلى.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>التحديات والحلول</h2>
+    <p>كانت بيانات CAN غير متوازنة للغاية حيث طغت البيانات العادية على بيانات الهجوم. لحل هذه المشكلة، استخدمت ميزات مثل <strong>إشارات فرق الوقت</strong> و<strong>تكرار معرف CAN</strong> مما حسّن اكتشاف الهجمات الخفية. قدمت خوارزمية <strong>TRCC</strong> نهجًا مستوحى من الجهاز المناعي لتحقيق فصل أفضل في البيانات غير المصنفة.</p>
+  </section>
+
+  <!-- التذييل -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="../index_ar.html#features">المهارات</a>
+        <a href="../index_ar.html#showcase">المشاريع</a>
+        <a href="../index_ar.html#timeline">الرحلة</a>
+        <a href="../index_ar.html#contact">التواصل</a>
+      </div>
+      <div class="footer-copyright">
+        <p>© 2025 ازر أدهم. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts.js"></script>
+</body>
+</html>

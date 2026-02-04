@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الكرسي المتحرك بالصوت | ازر أدهم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+</head>
+<body style="text-align:right;">
+  <!-- الخلفية -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+  <div class="neural-lines"><div class="neural-line"></div><div class="neural-line"></div><div class="neural-line"></div></div>
+
+  <!-- القائمة -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index_ar.html">
+          <img src="../assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>ازر أدهم</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index_ar.html#skills">المهارات</a></li>
+        <li><a href="../index_ar.html#showcase">المشاريع</a></li>
+        <li><a href="../index_ar.html#journey">الرحلة</a></li>
+        <li><a href="../index_ar.html#contact">التواصل</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- المقدمة -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">تكنولوجيا مساعدة • الأنظمة المدمجة</div>
+      <h1>الكرسي المتحرك بالصوت</h1>
+      <p>
+        نموذج أولي لكرسي متحرك يتم التحكم فيه عبر <strong>الأوامر الصوتية</strong> باللغة التركية.<br>
+        تم بناؤه باستخدام <strong>Raspberry Pi</strong>، <strong>Vosk للتعرف على الكلام</strong>، و<strong>تحكم المحركات عبر GPIO</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- المحتوى -->
+  <section class="project-section glass">
+    <h2>نظرة عامة</h2>
+    <p>يهدف المشروع إلى توفير <strong>حل تنقل مساعد منخفض التكلفة</strong> للمستخدمين ذوي السيطرة الجسدية المحدودة. بفضل التعرف على الصوت والتحكم بالمحركات، أصبح بالإمكان التنقل بدون استخدام اليدين عبر أوامر بسيطة.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>النقاط التقنية</h2>
+    <ul>
+      <li><strong>المنصة:</strong> Raspberry Pi 4</li>
+      <li><strong>التعرف على الكلام:</strong> Vosk (بدون إنترنت، نموذج تركي)</li>
+      <li><strong>الأوامر:</strong> "ileri" (إلى الأمام)، "geri" (إلى الخلف)، "sol" (يسار)، "sağ" (يمين)، "dur" (توقف)</li>
+      <li><strong>تحكم المحركات:</strong> مكتبة RPi.GPIO</li>
+      <li><strong>السلامة:</strong> إيقاف طارئ + تجنب الاصطدام باستخدام حساسات فوق صوتية</li>
+      <li><strong>البرمجة:</strong> Python (ربط الصوت بالحركة)</li>
+    </ul>
+  </section>
+
+  <section class="project-section glass">
+    <h2>النتائج</h2>
+    <p>تمكن النموذج الأولي من ربط <strong>الأوامر الصوتية في الوقت الفعلي</strong> مع تحركات المحركات بشكل ناجح. <strong>التعرف دون إنترنت</strong> قلل التأخير وجعل النظام أكثر ثباتًا.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>التحديات والحلول</h2>
+    <p>تأثر التعرف على الكلام بـ<strong>ضوضاء الخلفية</strong>. لتحسين الأداء، قمت باستخدام <strong>ترشيح الضوضاء</strong> وضبط موضع الميكروفون. من أجل الأمان، أضفت <strong>آلية توقف طارئ مع الحساسات</strong> عند وجود عائق.</p>
+  </section>
+
+  <!-- التذييل -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links"><a href="../index_ar.html#features">المهارات</a><a href="../index_ar.html#showcase">المشاريع</a><a href="../index_ar.html#journey">الرحلة</a><a href="../index_ar.html#contact">التواصل</a></div>
+      <p>© 2025 ازر أدهم. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+  <script src="../scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كشف سرطان الثدي الحراري | ازر</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+</head>
+<body style="text-align:right;">
+  <div class="neural-background"></div>
+  <div class="geometric-shapes">
+    <div class="shape"></div><div class="shape"></div>
+    <div class="shape"></div><div class="shape"></div>
+  </div>
+  <div class="neural-lines">
+    <div class="neural-line"></div><div class="neural-line"></div>
+    <div class="neural-line"></div>
+  </div>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index_ar.html">
+          <img src="../assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>ازر أدهم</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index_ar.html#skills">المهارات</a></li>
+        <li><a href="../index_ar.html#showcase">المشاريع</a></li>
+        <li><a href="../index_ar.html#timeline">المسيرة</a></li>
+        <li><a href="../index_ar.html#contact">التواصل</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">رؤية حاسوبية • ذكاء اصطناعي طبي</div>
+      <h1>كشف سرطان الثدي الحراري</h1>
+      <p>
+        نظام متكامل لاكتشاف سرطان الثدي باستخدام <strong>الصور الحرارية</strong>.<br>
+        تم بناؤه باستخدام <strong>YOLOv8</strong> للتصنيف و<strong>Grad-CAM</strong> للشرح،<br>
+        وتم نشره على <strong>Raspberry Pi 5 + كاميرا حرارية MLX90640</strong>.
+      </p>
+    </div>
+  </section>
+
+  <section class="project-section glass">
+    <h2>نظرة عامة</h2>
+    <p>يهدف هذا المشروع إلى الكشف المبكر وغير الجراحي عن سرطان الثدي باستخدام <strong>الصور الحرارية</strong>. 
+    حيث تلتقط الصور الحرارية أنماط الحرارة التي يمكن أن تكشف النشاط الوعائي أو الأيضي المرتبط بالأورام. 
+    تم تدريب نماذج تعلم عميق لتصنيف الحالات <strong>الحميدة مقابل الخبيثة</strong> وتحسين أدائها على أجهزة مدمجة منخفضة الطاقة.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>التفاصيل التقنية</h2>
+    <ul>
+      <li><strong>مجموعة البيانات:</strong> صور حرارية للثدي (حميد وخبيث، بيانات Diagnostics.xlsx)</li>
+      <li><strong>المعالجة المسبقة:</strong> زيادة البيانات، التطبيع، موازنة الفئات</li>
+      <li><strong>النماذج:</strong> YOLOv8 (النموذج النهائي)، MobileNetV2، نماذج CNN</li>
+      <li><strong>الشرح:</strong> خرائط Grad-CAM لتوضيح مناطق الاهتمام</li>
+      <li><strong>الأجهزة:</strong> Raspberry Pi 5 وكاميرا حرارية MLX90640</li>
+      <li><strong>الأطر:</strong> Python، PyTorch، OpenCV، Ultralytics YOLO</li>
+    </ul>
+  </section>
+
+  <section class="project-section glass">
+    <h2>النتائج</h2>
+    <p>حقق نموذج <strong>YOLOv8</strong> النهائي <strong>دقة تفوق 90%</strong> مع أداء متوازن بين الحالات الحميدة والخبيثة. 
+    أكدت خرائط <strong>Grad-CAM</strong> أن النموذج يركز على الأنماط الحرارية ذات الصلة بيولوجياً. 
+    عمل النظام على <strong>Raspberry Pi</strong> في الوقت الفعلي، مما أثبت إمكانية إنشاء نظام فحص محمول ومنخفض التكلفة.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>التحديات والحلول</h2>
+    <p>كانت البيانات تعاني من <strong>اختلال في الفئات</strong> (عدد أكبر من العينات الحميدة). 
+    تم حل ذلك باستخدام <strong>زيادة البيانات</strong> وتقنيات <strong>موازنة الفئات</strong>. 
+    لتشغيل YOLOv8 على Raspberry Pi تم استخدام <strong>الكمّنة</strong> والتحسينات الخاصة بالأجهزة. 
+    كما أُضيفت <strong>Grad-CAM</strong> لزيادة <strong>موثوقية النموذج في التطبيقات الطبية</strong>.</p>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="../index_ar.html#features">المهارات</a>
+        <a href="../index_ar.html#showcase">المشاريع</a>
+        <a href="../index_ar.html#timeline">المسيرة</a>
+        <a href="../index_ar.html#contact">التواصل</a>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2025 ازر ادهم. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts.js"></script>
+</body>
+</html>

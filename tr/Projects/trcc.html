@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRCC Algoritması | Azar Adham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <!-- Arka Plan -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+  <div class="neural-lines"><div class="neural-line"></div><div class="neural-line"></div><div class="neural-line"></div></div>
+
+  <!-- Üst Menü -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index_tr.html">
+          <img src="../assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>AZAR ADHAM</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index_tr.html#skills">Yetenekler</a></li>
+        <li><a href="../index_tr.html#showcase">Projeler</a></li>
+        <li><a href="../index_tr.html#journey">Yolculuk</a></li>
+        <li><a href="../index_tr.html#contact">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Başlık -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">KÜMELEME • BAĞIŞIKLIK İLHAMLI BİLGİSAYIM</div>
+      <h1>TRCC: Doku Tepkisi ve Sitokin Kümeleme</h1>
+      <p>
+        <strong>Bağışıklık sistemi sitokin sinyalleşmesinden</strong> esinlenen yeni bir kümeleme algoritması.  
+        <strong>K-Means</strong> veya <strong>DBSCAN</strong>’e kıyasla <strong>gürültü</strong> ve <strong>konveks olmayan kümeler</strong> ile daha iyi başa çıkar.
+      </p>
+    </div>
+  </section>
+
+  <!-- İçerik -->
+  <section class="project-section glass">
+    <h2>Algoritma Tanımı</h2>
+    <p>Her nokta, mesafe ile ters orantılı ve yoğunlukla ağırlıklandırılmış bir sitokin sinyali yayar:</p>
+    <p style="text-align:center">
+      $$ S_i = \sum_{j \in N_\epsilon(i)} \exp\Big(-\frac{d(x_i, x_j)^2}{2\sigma^2}\Big) \cdot w_j $$
+    </p>
+    <p>
+      Burada \( S_i \) nokta \( i \) üzerindeki sinyaldir,  
+      \( d(x_i, x_j) \) Öklid mesafesidir,  
+      \( \sigma \) duyarlılık faktörüdür,  
+      \( w_j \) ise yoğunluk ağırlığıdır.
+    </p>
+    <p>Kümeler, merkezler arası mesafe eşik değerinin altında ise birleştirilir:</p>
+    <p style="text-align:center">
+      $$ d(C_a, C_b) < D_{\max} $$
+    </p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Sonuçlar</h2>
+    <ul>
+      <li><strong>Sentetik Veri Setleri:</strong> K-Means’in başarısız olduğu spiral, ay ve elmas kümelerini doğru ayırdı.</li>
+      <li><strong>Araba Saldırı IDS:</strong> TRCC + özellik mühendisliği, DBSCAN’e kıyasla %12 daha yüksek saflık elde etti.</li>
+      <li><strong>RNA İfadesi:</strong> Gen ekspresyonu veri setlerinde daha yüksek siluet skorları elde edildi.</li>
+    </ul>
+    <p class="results-equation">
+      Silhouette(TRCC) = 0.71 &nbsp;&nbsp; vs &nbsp;&nbsp; DBSCAN = 0.52
+    </p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Etkisi</h2>
+    <p>TRCC, <strong>bağışıklık ilhamlı yapay zekâ</strong> için yeni yollar açar.  
+    Kullanım alanları: siber güvenlik IDS, biyomedikal kümeleme ve anomali tespiti.</p>
+  </section>
+
+  <!-- Altbilgi -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links"><a href="../index_tr.html#features">Yetenekler</a><a href="../index_tr.html#showcase">Projeler</a><a href="../index_tr.html#timeline">Yolculuk</a><a href="../index_tr.html#contact">İletişim</a></div>
+      <p>&copy; 2025 Azar Adham. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+  <script src="../scripts.js"></script>
+</body>
+</html>

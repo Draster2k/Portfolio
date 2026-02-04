@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EGO Algoritması | Azar Adham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <!-- Arka Plan -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+  <div class="neural-lines"><div class="neural-line"></div><div class="neural-line"></div><div class="neural-line"></div></div>
+
+  <!-- Üst Menü -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index_tr.html">
+          <img src="../assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>AZAR ADHAM</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index_tr.html#skills">Yetenekler</a></li>
+        <li><a href="../index_tr.html#showcase">Projeler</a></li>
+        <li><a href="../index_tr.html#journey">Yolculuk</a></li>
+        <li><a href="../index_tr.html#contact">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Başlık -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">OPTİMİZASYON • META-SEZGİSELLER</div>
+      <h1>EGO: Entropi Yönlendirmeli Optimizasyon</h1>
+      <p>Bir meta-sezgisel algoritma; <strong>entropi</strong>, <strong>keşif</strong> ve <strong>yararlanma</strong> arasındaki dengeyi dinamik olarak sağlar.</p>
+    </div>
+  </section>
+
+  <!-- İçerik -->
+  <section class="project-section glass">
+    <h2>Entropi Formülü</h2>
+    <p>Popülasyon uygunluk dağılımının entropisi şu şekilde hesaplanır:</p>
+    <p style="text-align:center">
+      $$ H = - \sum_{i=1}^n p_i \log(p_i) $$
+    </p>
+    <p>
+      Burada \( p_i \), uygunluk sırasının normalize edilmiş olasılığıdır.  
+      <strong>Yüksek entropi</strong> → daha fazla keşif.  
+      <strong>Düşük entropi</strong> → en iyi adayların kullanımı.
+    </p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Sonuçlar</h2>
+    <p>EGO, Genetik Algoritma (GA), Parçacık Sürü Optimizasyonu (PSO) ve Diferansiyel Evrim (DE) ile karşılaştırıldı:</p>
+    <ul>
+      <li><strong>Sphere (konveks):</strong> En hızlı yakınsama.</li>
+      <li><strong>Ackley (çok modlu):</strong> GA/PSO’nun başarısız olduğu durumlarda erken yakınsamayı önledi.</li>
+      <li><strong>Rastrigin:</strong> Çeşitliliği daha uzun süre korudu → küresel optimuma ulaştı.</li>
+    </ul>
+    <p class="results-equation">
+      f<sub>best</sub>(EGO) &lt; f<sub>best</sub>(GA, PSO, DE)  
+      <br>
+      koşuların %90’ında
+    </p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Etkisi</h2>
+    <p>EGO, <strong>bilgi kuramı sinyallerinin</strong> (entropi) optimizasyon kararlılığını artırabileceğini gösteriyor.  
+    Gelecek çalışmalar: <strong>sinir ağı mimarisi araması</strong> ve <strong>ML hiperparametre ayarlaması</strong>.</p>
+  </section>
+
+  <!-- Altbilgi -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links"><a href="../index_tr.html#features">Yetenekler</a><a href="../index_tr.html#showcase">Projeler</a><a href="../index_tr.html#timeline">Yolculuk</a><a href="../index_tr.html#contact">İletişim</a></div>
+      <p>&copy; 2025 Azar Adham. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+  <script src="../scripts.js"></script>
+</body>
+</html>

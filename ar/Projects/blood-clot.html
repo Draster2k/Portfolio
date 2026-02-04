@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نظام كشف الجلطات | ازر أدهم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- خلفية -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+  <div class="neural-lines"><div class="neural-line"></div><div class="neural-line"></div><div class="neural-line"></div></div>
+
+  <!-- ترويسة -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index_ar.html">
+          <img src="../assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>ازر أدهم</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index_ar.html#features">المهارات</a></li>
+        <li><a href="../index_ar.html#showcase">المشاريع</a></li>
+        <li><a href="../index_ar.html#timeline">الرحلة</a></li>
+        <li><a href="../index_ar.html#contact">التواصل</a></li>
+       </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">الذكاء الاصطناعي الطبي • MATLAB</div>
+      <h1>نظام كشف الجلطات</h1>
+      <p>
+        نموذج <strong>CNN مع واجهة رسومية</strong> مبني على MATLAB لاكتشاف اضطرابات تخثر الدم.<br>
+        يركز على <strong>الكشف المبكر</strong> باستخدام صور حرارية وواجهة طبية تفاعلية.
+      </p>
+    </div>
+  </section>
+
+  <!-- المحتوى -->
+  <section class="project-section glass">
+    <h2>نظرة عامة</h2>
+    <p>هذا المشروع طور <strong>نظام تشخيص بمساعدة الحاسوب (CAD)</strong> لاكتشاف اضطرابات التخثر. تم تنفيذه باستخدام <strong>MATLAB</strong>، حيث يجمع بين التعلم العميق وواجهة رسومية تتيح للأطباء رفع الصور الحرارية وتشغيلها عبر شبكة CNN والحصول على تنبؤ فوري.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>التفاصيل التقنية</h2>
+    <ul>
+      <li><strong>البيانات:</strong> صور طبية حرارية (سليمة مقابل جلطة)</li>
+      <li><strong>الإطار:</strong> MATLAB Deep Learning Toolbox</li>
+      <li><strong>النموذج:</strong> شبكة CNN مدربة على صور طبية</li>
+      <li><strong>الواجهة:</strong> MATLAB App Designer لسهولة الاستخدام السريري</li>
+      <li><strong>الميزات:</strong> معالجة أولية تلقائية، مخرجات تصنيف، عرض حراري (Heatmap)</li>
+      <li><strong>التركيز:</strong> التعرف المبكر على اضطرابات تدفق الدم</li>
+    </ul>
+  </section>
+
+  <section class="project-section glass">
+    <h2>النتائج</h2>
+    <p>حقق النموذج دقة عالية على بيانات الاختبار، وتمكن من التمييز بين الصور السليمة والمصابة. <strong>تكامل الواجهة الرسومية</strong> جعل استخدام النموذج سهلاً للأطباء دون الحاجة إلى خبرة تقنية.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>التحديات والحلول</h2>
+    <p>كان التحدي الأكبر هو التعامل مع <strong>البيانات الحرارية الصغيرة وغير المتوازنة</strong>. تم حل ذلك عبر زيادة البيانات والتطبيع. أما قيود MATLAB في دعم الـGPU فتم تجاوزها من خلال <strong>تصغير حجم الشبكة وتقليل الطبقات</strong> لتسريع الاستدلال.</p>
+  </section>
+
+  <!-- ذيل الصفحة -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="../index_ar.html#features">المهارات</a>
+        <a href="../index_ar.html#showcase">المشاريع</a>
+        <a href="../index_ar.html#timeline">الرحلة</a>
+        <a href="../index_ar.html#contact">التواصل</a>
+      </div>
+      <div class="footer-copyright">
+        <p>© 2025 ازر أدهم. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts.js"></script>
+</body>
+</html>

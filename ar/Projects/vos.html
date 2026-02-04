@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تقسيم الأجسام في الفيديو | ازر أدهم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+</head>
+<body style="text-align:right;">
+  <!-- الخلفية -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+  <div class="neural-lines"><div class="neural-line"></div><div class="neural-line"></div><div class="neural-line"></div></div>
+
+  <!-- القائمة -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index_ar.html">
+          <img src="../assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>ازر أدهم</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index_ar.html#skills">المهارات</a></li>
+        <li><a href="../index_ar.html#showcase">المشاريع</a></li>
+        <li><a href="../index_ar.html#journey">الرحلة</a></li>
+        <li><a href="../index_ar.html#contact">التواصل</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- المقدمة -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">رؤية حاسوبية • تعلم عميق</div>
+      <h1>تقسيم الأجسام في الفيديو</h1>
+      <p>
+        نظام مخصص للتجزئة في الوقت الحقيقي باستخدام <b>مجموعة بيانات DAVIS 2017</b>.  
+        يتضمن <b>ResNet50</b> كأساس، <b>ConvLSTM</b> للنمذجة الزمنية، و<b>CBAM</b> للتركيز التكيفي.
+      </p>
+    </div>
+  </section>
+
+  <!-- المحتوى -->
+  <section class="project-section glass">
+    <h2>نظرة عامة</h2>
+    <p>هذا المشروع تناول مشكلة <strong>تقسيم الأجسام في الفيديو (VOS)</strong> حيث الهدف هو فصل وتتبع الأجسام عبر تسلسل الفيديو. الشبكات العصبية التقليدية (CNN) تتعامل مع كل إطار بشكل مستقل وتفشل في الحفاظ على التناسق الزمني، لذلك صممت هيكلية مخصصة تضم <strong>ResNet50</strong>، طبقات <strong>ConvLSTM</strong>، و<strong>CBAM</strong>.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>النقاط التقنية</h2>
+    <ul>
+      <li><strong>البيانات:</strong> DAVIS 2017 (نصف مُشرف + مشرف)</li>
+      <li><strong>الأساس:</strong> ResNet50 مدرب مسبقًا على ImageNet</li>
+      <li><strong>النموذج الزمني:</strong> ConvLSTM للوعي بالحركة</li>
+      <li><strong>آلية الانتباه:</strong> CBAM (وحدة انتباه الكتل الالتفافية)</li>
+      <li><strong>الأطر:</strong> TensorFlow/Keras, OpenCV</li>
+      <li><strong>التدريب:</strong> Adam optimizer، BCE loss، 50 حقبة</li>
+      <li><strong>الأجهزة:</strong> بطاقة NVIDIA RTX 3060 (12GB)</li>
+    </ul>
+  </section>
+
+  <section class="project-section glass">
+    <h2>النتائج</h2>
+    <p>حقق النظام تحسنًا في <strong>معدل التقاطع (IoU) بنسبة +12%</strong> مقارنة بالشبكات الأساسية. وأظهرت المقارنات البصرية تقليل الوميض والحصول على حدود أكثر اتساقًا.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>التحديات والحلول</h2>
+    <p>واجهت النماذج الأولى صعوبة في الحفاظ على استمرارية الأجسام مع الحركة السريعة. إضافة <strong>طبقات ConvLSTM</strong> مكنت النموذج من "تذكر" أنماط الحركة. دمج <strong>CBAM</strong> حسّن الأداء عبر التركيز على المناطق الأكثر أهمية.</p>
+  </section>
+
+  <!-- التذييل -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links"><a href="../index_ar.html#features">المهارات</a><a href="../index_ar.html#showcase">المشاريع</a><a href="../index_ar.html#timeline">الرحلة</a><a href="../index_ar.html#contact">التواصل</a></div>
+      <p>© 2025 ازر أدهم. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+  <script src="../scripts.js"></script>
+</body>
+</html>

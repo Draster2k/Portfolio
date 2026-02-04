@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Nesne Bölütleme | Azar Adham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Arka Plan -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+  <div class="neural-lines"><div class="neural-line"></div><div class="neural-line"></div><div class="neural-line"></div></div>
+
+  <!-- Menü -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index_tr.html">
+          <img src="../assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>AZAR ADHAM</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index_tr.html#skills">Yetenekler</a></li>
+        <li><a href="../index_tr.html#showcase">Projeler</a></li>
+        <li><a href="../index_tr.html#journey">Yolculuk</a></li>
+        <li><a href="../index_tr.html#contact">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">Bilgisayarlı Görü • Derin Öğrenme</div>
+      <h1>Video Nesne Bölütleme</h1>
+      <p>
+        <b>DAVIS 2017 veri seti</b> kullanılarak gerçek zamanlı segmentasyon için özel bir derin öğrenme yapısı.  
+        <b>ResNet50</b> omurgası, <b>ConvLSTM</b> ile zamansal modelleme ve <b>CBAM dikkat mekanizması</b> entegre edilmiştir.
+      </p>
+    </div>
+  </section>
+
+  <!-- İçerik -->
+  <section class="project-section glass">
+    <h2>Genel Bakış</h2>
+    <p>Bu proje <strong>Video Nesne Bölütleme (VOS)</strong> problemine odaklandı. Amaç, video kareleri boyunca nesneleri segmentleyip izlemekti. Klasik CNN’ler kareleri bağımsız işler ve zamansal tutarlılığı sağlayamaz. Bu nedenle <strong>ResNet50 omurgası</strong>, <strong>ConvLSTM katmanları</strong> ve <strong>CBAM dikkat modülü</strong> birleştirildi.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Teknik Özellikler</h2>
+    <ul>
+      <li><strong>Veri Seti:</strong> DAVIS 2017 (yarı denetimli + denetimli ayrımlar)</li>
+      <li><strong>Omurga:</strong> ResNet50 (ImageNet üzerinde önceden eğitilmiş)</li>
+      <li><strong>Zamansal Model:</strong> ConvLSTM (hareket farkındalığı)</li>
+      <li><strong>Dikkat Mekanizması:</strong> CBAM (Convolutional Block Attention Module)</li>
+      <li><strong>Kütüphaneler:</strong> TensorFlow/Keras, OpenCV</li>
+      <li><strong>Eğitim:</strong> Adam optimizer, BCE loss, 50 epoch</li>
+      <li><strong>Donanım:</strong> NVIDIA RTX 3060 GPU (12GB)</li>
+    </ul>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Sonuçlar</h2>
+    <p>Temel CNN’lere kıyasla <strong>%12 IoU artışı</strong> sağlandı. Görsel karşılaştırmalar, daha az titreme ve daha tutarlı sınırlar gösterdi.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Zorluklar ve Çözümler</h2>
+    <p>Başlangıçta modeller hızlı hareketlerde nesne sürekliliğini koruyamadı. <strong>ConvLSTM katmanları</strong>, hareket kalıplarını “hatırlamayı” sağladı. <strong>CBAM dikkat mekanizması</strong> ise modelin önemli bölgelere odaklanmasını artırdı.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links"><a href="../index_tr.html#features">Yetenekler</a><a href="../index_tr.html#showcase">Projeler</a><a href="../index_tr.html#timeline">Yolculuk</a><a href="../index_tr.html#contact">İletişim</a></div>
+      <p>&copy; 2025 Azar Adham. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+  <script src="../scripts.js"></script>
+</body>
+</html>

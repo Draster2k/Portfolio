@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azar Adham | Portföy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="styles.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/assets/fivcon.ico">
+</head>
+<body>
+  <!-- Background + effects -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+  <div class="neural-lines"><div class="neural-line"></div><div class="neural-line"></div><div class="neural-line"></div></div>
+
+  <!-- Header -->
+  <header class="glass">
+    <nav>
+      <a href="index_tr.html" class="logo">
+        <img src="../assets/Azer Logo-2 White.png" alt="Azar Logo">
+        <span>AZAR ADHAM</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#features">Yetenekler</a></li>
+        <li><a href="#showcase">Projeler</a></li>
+        <li><a href="#timeline">Yolculuk</a></li>
+        <li><a href="#certifications">Sertifikalar</a></li>
+        <li><a href="#contact">İletişim</a></li>
+      </ul>
+      <div class="mobile-menu-toggle"><div class="hamburger-line"></div><div class="hamburger-line"></div><div class="hamburger-line"></div></div>
+    </nav>
+    <div class="mobile-nav">
+      <a href="#features">Yetenekler</a>
+      <a href="#showcase">Projeler</a>
+      <a href="#timeline">Yolculuk</a>
+      <a href="#certifications">Sertifikalar</a>
+      <a href="#contact">İletişim</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-photo">
+      <img src="../assets/me_glasses_bg.png" alt="Azar Adham" />
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-subtitle">BİLGİSAYAR MÜHENDİSİ</div>
+      <h1>AZAR ADHAM</h1>
+
+      <div class="hero-description">
+        <p>Yapay Zeka & Makine Öğrenmesi Mühendisi • Araştırmacı • Geliştirici.<br>
+        Derin öğrenme, optimizasyon ve yaratıcı problem çözme alanlarını keşfediyorum.</p>
+      </div>
+
+      <div class="cta-buttons">
+        <a href="../index.html" class="cta-button">English</a>
+        <a href="../ar/index_ar.html" class="cta-button">العربية</a>
+     </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="features" id="features">
+    <div class="features-container">
+      <h2 class="section-title">Yetenekler</h2>
+      <div class="diagonal-grid">
+
+        <div class="feature-row">
+          <div class="feature-content glass">
+            <div class="feature-icon">🐍</div>
+            <h3>Python & ML</h3>
+            <p>TensorFlow, PyTorch, Scikit-learn. CNN, RNN, pekiştirmeli öğrenme ajanları geliştirdim. 
+               Veri işleme, ön işleme ve görselleştirmede deneyimli (Pandas, NumPy, Matplotlib).</p>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-content glass">
+            <div class="feature-icon">💻</div>
+            <h3>Yazılım Geliştirme</h3>
+            <p>C#, SQL, MATLAB ve JavaScript deneyimi. Web uygulamaları ve backend araçları geliştirdim.
+               Sürüm kontrolü (Git/GitHub), yazılım tasarım desenleri ve hata ayıklama bilgisi.</p>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-content glass">
+            <div class="feature-icon">🎨</div>
+            <h3>3D & Tasarım</h3>
+            <p>Blender ile modelleme, render ve animasyon. Yaratıcı görselleştirme, prototipleme ve
+               teknik projelerde tasarımı bütünleştirme (UI/UX kavramları, Figma).</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="showcase" id="showcase">
+    <h2 class="section-title">Projeler</h2>
+    <p class="section-subtitle">Yapay Zeka, Makine Öğrenmesi, Optimizasyon ve Destekleyici Teknolojilerdeki çalışmalarımı keşfedin.</p>
+
+    <div class="hexagon-container">
+      <a href="Projects/trcc.html" class="hexagon">
+        <div class="hexagon-inner glass">
+          <h4>TRCC Algoritması</h4>
+          <p>Bağışıklık Esinli Kümeleme</p>
+        </div>
+      </a>
+
+      <a href="Projects/ego.html" class="hexagon">
+        <div class="hexagon-inner glass">
+          <h4>EGO</h4>
+          <p>Entropi Yönlendirmeli Optimizasyon</p>
+        </div>
+      </a>
+
+      <a href="Projects/vos.html" class="hexagon">
+        <div class="hexagon-inner glass">
+          <h4>Video Nesne Bölütleme</h4>
+          <p>ResNet50 + ConvLSTM + CBAM</p>
+        </div>
+      </a>
+
+      <a href="Projects/car-hacking.html" class="hexagon">
+        <div class="hexagon-inner glass">
+          <h4>Araba Hackleme IDS</h4>
+          <p>Random Forest + TRCC</p>
+        </div>
+      </a>
+
+      <a href="Projects/tictactoe.html" class="hexagon">
+        <div class="hexagon-inner glass">
+          <h4>X-O Yapay Zeka</h4>
+          <p>DQN + DDQN RL</p>
+        </div>
+      </a>
+
+      <a href="Projects/breast-cancer.html" class="hexagon">
+        <div class="hexagon-inner glass">
+          <h4>Meme Kanseri Tespiti</h4>
+          <p>YOLOv8 + Grad-CAM</p>
+        </div>
+      </a>
+
+      <a href="Projects/blood-clot.html" class="hexagon">
+        <div class="hexagon-inner glass">
+          <h4>Pıhtı Dedektörü</h4>
+          <p>MATLAB CNN GUI</p>
+        </div>
+      </a>
+
+      <a href="Projects/wheelchair.html" class="hexagon">
+        <div class="hexagon-inner glass">
+          <h4>Sesle Kontrol Edilen Tekerlekli Sandalye</h4>
+          <p>RPi + Vosk Konuşma</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="timeline" id="timeline">
+    <h2 class="section-title">Yolculuk</h2>
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item">
+        <div class="timeline-content glass">
+          <div class="timeline-year">2025</div>
+          <h4>Bilgisayar Mühendisliği Mezuniyeti</h4>
+          <p>Düzce Üniversitesi • <strong>Yapay Zeka, ML, Siber Güvenlik</strong> üzerine uzmanlaşma.</p>
+          <p>Tez: <strong>Tic-Tac-Toe için Derin Q-Öğrenme</strong>.  
+          Ana proje: <strong>Video Nesne Bölütleme (ResNet50 + ConvLSTM + CBAM)</strong>.</p>
+        </div>
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content glass">
+          <div class="timeline-year">2024</div>
+          <h4>Staj - Flexisb</h4>
+          <p><strong>Flexisb Dijital Tasarım & Yazılım Hizmetleri</strong> • Junior Engineer (Networking)</p>
+          <p><strong>Kurumsal ağlar, sistem entegrasyonu</strong> ve <strong>dijital hizmet tasarımı</strong> üzerine çalıştım.  
+          Ağ altyapısı yapılandırma ve sorun giderme desteği sağladım.</p>
+        </div>
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content glass">
+          <div class="timeline-year">2024</div>
+          <h4>Araştırma Projeleri</h4>
+          <p><strong>TRCC Kümeleme Algoritması</strong> (bağışıklık esinli).  
+          <strong>EGO optimizasyonu</strong> karmaşık arama alanları için.</p>
+          <p>Biyomedikal ML: <strong>Meme Kanseri Tespiti (YOLOv8)</strong>,  
+          <strong>Pıhtı Dedektörü (MATLAB CNN)</strong>.</p>
+        </div>
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content glass">
+          <div class="timeline-year">2023</div>
+          <h4>Makine Öğrenmesine Derinlemesine Giriş</h4>
+          <p><strong>Araba Hackleme IDS</strong> (Random Forest + TRCC).  
+          <strong>Karmaşık Ağ Analizi</strong>: merkezilik, kümeleme, PageRank.</p>
+        </div>
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content glass">
+          <div class="timeline-year">2022</div>
+          <h4>İlk Prototipler</h4>
+          <p><strong>Sesle Kontrol Edilen Tekerlekli Sandalye</strong> (Raspberry Pi + Vosk).  
+          MATLAB sınıflandırıcıları ile biyomedikal ML.</p>
+        </div>
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content glass">
+          <div class="timeline-year">2020</div>
+          <h4>Bilgisayar Mühendisliğine Başlangıç</h4>
+          <p><strong>Düzce Üniversitesi</strong>.  
+          Programlama, matematik ve sistem temellerine odaklandım.</p>
+        </div>
+        <div class="timeline-dot"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="features" id="certifications">
+    <h2 class="section-title">Sertifikalar</h2>
+    <p class="section-subtitle">MATLAB Onramp Kursları</p>
+
+    <div class="hexagon-container">
+      <a href="../assets/certs/MatLab.pdf" class="hexagon" target="_blank">
+        <div class="hexagon-inner glass">
+          <h4>MATLAB Onramp</h4>
+          <p>17 Ekim 2023’ten önce</p>
+        </div>
+      </a>
+
+      <a href="../assets/certs/Signal-Processing.pdf" class="hexagon" target="_blank">
+        <div class="hexagon-inner glass">
+          <h4>Sinyal İşleme Onramp</h4>
+          <p>17 Ekim 2023</p>
+        </div>
+      </a>
+
+      <a href="../assets/certs/Machine-Learning.pdf" class="hexagon" target="_blank">
+        <div class="hexagon-inner glass">
+          <h4>Makine Öğrenmesi Onramp</h4>
+          <p>28 Kasım 2023</p>
+        </div>
+      </a>
+
+      <a href="../assets/certs/Deep-Learning.pdf" class="hexagon" target="_blank">
+        <div class="hexagon-inner glass">
+          <h4>Derin Öğrenme Onramp</h4>
+          <p>17 Aralık 2023</p>
+        </div>
+      </a>
+
+      <a href="../assets/certs/Optimization.pdf" class="hexagon" target="_blank">
+        <div class="hexagon-inner glass">
+          <h4>Optimizasyon Onramp</h4>
+          <p>28 Kasım 2024</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="contact-container">
+      <div class="contact-info glass">
+        <h3>İletişime Geç</h3>
+        <div class="social-links">
+          <a href="https://github.com/Draster2k" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/azer-adham-5454411a4/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/AzerAdham2K" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/azer.shazi/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#features">Yetenekler</a><a href="#showcase">Projeler</a><a href="#timeline">Yolculuk</a><a href="#certifications">Sertifikalar</a><a href="#contact">İletişim</a>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2025 Azar Adham. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+    <div class="footer-download">
+      <a href="assets/Azar_Adham_CV.pdf" download>CV İndir</a>
+    </div>
+  </footer>
+  <script src="scripts.js"></script>
+</body>
+</html>

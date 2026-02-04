@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pıhtı Tespit Sistemi | Azar Adham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Arka plan -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+  <div class="neural-lines"><div class="neural-line"></div><div class="neural-line"></div><div class="neural-line"></div></div>
+
+  <!-- Başlık -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index_tr.html">
+          <img src="../assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>AZAR ADHAM</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index_tr.html#features">Yetenekler</a></li>
+        <li><a href="../index_tr.html#showcase">Projeler</a></li>
+        <li><a href="../index_tr.html#timeline">Yolculuk</a></li>
+        <li><a href="../index_tr.html#contact">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">BİYOMEDİKAL YZ • MATLAB</div>
+      <h1>Pıhtı Tespit Sistemi</h1>
+      <p>
+        MATLAB tabanlı <strong>GUI’li CNN modeli</strong> ile kan pıhtısı bozukluklarının tespiti.<br>
+        <strong>Erken teşhis</strong> odaklı, termal görüntüleme veri setleri ve etkileşimli medikal arayüz.
+      </p>
+    </div>
+  </section>
+
+  <!-- İçerik -->
+  <section class="project-section glass">
+    <h2>Genel Bakış</h2>
+    <p>Bu proje, potansiyel kan pıhtısı bozukluklarını belirlemek için <strong>Bilgisayar Destekli Teşhis (CAD) sistemi</strong> geliştirdi. <strong>MATLAB</strong> ortamında uygulanmış olup, derin öğrenme ile grafik arayüzü birleştirdi. Klinik kullanıcılar termal/diyagnostik görüntü yükleyip CNN üzerinden işleyerek gerçek zamanlı tahmin alabiliyor.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Teknik Detaylar</h2>
+    <ul>
+      <li><strong>Veri Seti:</strong> Benign vs. pıhtılı termal tıbbi görüntüler</li>
+      <li><strong>Çerçeve:</strong> MATLAB Deep Learning Toolbox</li>
+      <li><strong>Model:</strong> Görüntülerde eğitilmiş Konvolüsyonel Sinir Ağı</li>
+      <li><strong>GUI:</strong> MATLAB App Designer ile klinik kullanım için arayüz</li>
+      <li><strong>Özellikler:</strong> Otomatik ön işleme, sınıflandırma çıktısı, ısı haritası görselleştirme</li>
+      <li><strong>Odak:</strong> Dolaşım bozukluklarının erken teşhisi</li>
+    </ul>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Sonuçlar</h2>
+    <p>CNN modeli test veri setinde yüksek doğruluk elde etti, pıhtı içeren görüntüler ile sağlıklı olanları ayırabildi. <strong>GUI entegrasyonu</strong> sayesinde klinisyenler teknik bilgiye ihtiyaç duymadan tahminleri çalıştırabildi.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Zorluklar & Çözümler</h2>
+    <p>En büyük zorluklardan biri <strong>küçük ve dengesiz termal veri setleri</strong> oldu. Çözüm olarak veri artırma ve normalizasyon uygulandı. MATLAB’ın sınırlı GPU desteği, ağ boyutunu optimize edip <strong>katman azaltma</strong> ile aşıldı.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="../index_tr.html#features">Yetenekler</a>
+        <a href="../index_tr.html#showcase">Projeler</a>
+        <a href="../index_tr.html#timeline">Yolculuk</a>
+        <a href="../index_tr.html#contact">İletişim</a>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2025 Azar Adham. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Termal Meme Kanseri Tespiti | Azar Adham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="neural-background"></div>
+  <div class="geometric-shapes">
+    <div class="shape"></div><div class="shape"></div>
+    <div class="shape"></div><div class="shape"></div>
+  </div>
+  <div class="neural-lines">
+    <div class="neural-line"></div><div class="neural-line"></div>
+    <div class="neural-line"></div>
+  </div>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index_tr.html">
+          <img src="../assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>AZAR ADHAM</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index_tr.html#skills">Yetenekler</a></li>
+        <li><a href="../index_tr.html#showcase">Projeler</a></li>
+        <li><a href="../index_tr.html#timeline">Yolculuk</a></li>
+        <li><a href="../index_tr.html#contact">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">BİLGİSAYARLI GÖRÜ • TIBBİ YAPAY ZEKA</div>
+      <h1>Termal Meme Kanseri Tespiti</h1>
+      <p>
+        <strong>Termal görüntüleme</strong> kullanarak uçtan uca meme kanseri tespit sistemi.<br>
+        <strong>YOLOv8</strong> modeli ile sınıflandırma, <strong>Grad-CAM</strong> ile açıklanabilirlik desteği,<br>
+        ve <strong>Raspberry Pi 5 + MLX90640 termal kamera</strong> üzerinde çalıştırma.
+      </p>
+    </div>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Genel Bakış</h2>
+    <p>Bu proje, <strong>termal görüntüleme</strong> ile meme kanserinin erken ve invaziv olmayan tespitini hedefledi. 
+    Kızılötesi termografi, tümörlerle ilişkili damar ve metabolik aktiviteleri gösteren ısı desenlerini yakalar. 
+    Derin öğrenme modelleri <strong>iyi huylu vs kötü huylu</strong> vakaları sınıflandırmak üzere eğitildi 
+    ve düşük güç tüketimli gömülü donanımda çalışacak şekilde optimize edildi.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Teknik Özellikler</h2>
+    <ul>
+      <li><strong>Veriseti:</strong> Meme termografi görüntüleri (Benign & Malignant, Diagnostics.xlsx)</li>
+      <li><strong>Ön İşleme:</strong> Artırma, normalizasyon, sınıf dengeleme</li>
+      <li><strong>Modeller:</strong> YOLOv8 (nihai), MobileNetV2 taban modeli, CNN prototipleri</li>
+      <li><strong>Açıklanabilirlik:</strong> Grad-CAM ısı haritaları</li>
+      <li><strong>Donanım:</strong> Raspberry Pi 5 + MLX90640 termal kamera</li>
+      <li><strong>Frameworkler:</strong> Python, PyTorch, OpenCV, Ultralytics YOLO</li>
+    </ul>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Sonuçlar</h2>
+    <p>Son <strong>YOLOv8 modeli</strong> <strong>%90’ın üzerinde doğruluk</strong> elde etti 
+    ve hem iyi huylu hem kötü huylu vakalarda dengeli performans gösterdi. 
+    <strong>Grad-CAM</strong> haritaları, modelin biyolojik olarak anlamlı termal bölgeleri kullandığını gösterdi. 
+    <strong>Raspberry Pi</strong> üzerinde gerçek zamanlı çalışarak düşük maliyetli taşınabilir tarama sistemlerinin 
+    mümkün olduğunu kanıtladı.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Zorluklar ve Çözümler</h2>
+    <p>Verisette <strong>sınıf dengesizliği</strong> (daha fazla benign örnek) mevcuttu. 
+    Bu durum <strong>veri artırma</strong> ve <strong>sınıf dengeleme</strong> teknikleriyle giderildi. 
+    YOLOv8’in Raspberry Pi’de çalışması için <strong>kuantizasyon</strong> ve donanım optimizasyonu uygulandı. 
+    <strong>Grad-CAM</strong> eklenerek modelin kararları daha açıklanabilir hale getirildi, böylece 
+    klinik güven artırıldı.</p>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="../index_tr.html#features">Yetenekler</a>
+        <a href="../index_tr.html#showcase">Projeler</a>
+        <a href="../index_tr.html#timeline">Yolculuk</a>
+        <a href="../index_tr.html#contact">İletişim</a>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2025 Azar Adham. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts.js"></script>
+</body>
+</html>

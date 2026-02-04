@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ذكاء اصطناعي للعبة X-O | ازر أدهم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+</head>
+<body style="text-align:right;">
+  <!-- الخلفية -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+  <div class="neural-lines"><div class="neural-line"></div><div class="neural-line"></div><div class="neural-line"></div></div>
+
+  <!-- العنوان -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index_ar.html">
+          <img src="../assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>ازر أدهم</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index_ar.html#skills">المهارات</a></li>
+        <li><a href="../index_ar.html#showcase">المشاريع</a></li>
+        <li><a href="../index_ar.html#journey">الرحلة</a></li>
+        <li><a href="../index_ar.html#contact">التواصل</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- المقدمة -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">التعلّم المعزز • وكيل ألعاب الذكاء الاصطناعي</div>
+      <h1>ذكاء اصطناعي للعبة X-O</h1>
+      <p>
+        وكيل تعلّم معزز للعبة X-O.<br>
+        تم تنفيذه باستخدام <strong>DQN</strong> و<strong>DDQN</strong> لتعلّم الاستراتيجيات المثلى عبر <strong>اللعب الذاتي</strong>.  
+        شكّل أساس مشروعي للتخرج الجامعي.
+      </p>
+    </div>
+  </section>
+
+  <!-- المحتوى -->
+  <section class="project-section glass">
+    <h2>نظرة عامة</h2>
+    <p>استكشف هذا المشروع <strong>التعلّم المعزز العميق</strong> المطبق على لعبة X-O الكلاسيكية. الهدف كان بناء وكيل ذكاء اصطناعي يتعلّم من الصفر عبر <strong>اللعب الذاتي</strong>، دون برمجته مسبقاً باستراتيجيات. استخدم الوكيل تقنيات <strong>DQN</strong> و<strong>DDQN</strong> لتحقيق استقرار في التعلّم ومنع المبالغة في قيم Q.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>أهم الجوانب التقنية</h2>
+    <ul>
+      <li><strong>البيئة:</strong> محاكي لوحة X-O مخصص</li>
+      <li><strong>الخوارزميات:</strong> DQN، Double DQN</li>
+      <li><strong>التدريب:</strong> حلقات لعب ذاتي مع استكشاف ε-greedy</li>
+      <li><strong>دالة الخسارة:</strong> متوسط مربع الخطأ (MSE) لتحديث قيم Q</li>
+      <li><strong>ذاكرة التجارب:</strong> إعادة تشغيل التجارب مع تحديث الشبكة الهدف</li>
+      <li><strong>الأدوات:</strong> Python، TensorFlow، NumPy</li>
+    </ul>
+  </section>
+
+  <section class="project-section glass">
+    <h2>النتائج</h2>
+    <p>نجح الوكيل في تعلّم <strong>الاستراتيجيات المثلى للعبة X-O</strong> بعد تدريب مكثف. مع DDQN، تحسن الاستقرار مقارنة بـ DQN، وتم تقليل الحركات المبالغ فيها. الوكيل المدرّب يحقق لعباً شبه مثالي ضد البشر والخصوم العشوائيين، ويضمن دائماً <strong>الفوز أو التعادل</strong>.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>التحديات والحلول</h2>
+    <p>أكبر تحدٍ كان <strong>التوازن بين الاستكشاف والاستغلال</strong>. النماذج المبكرة إما بالغت في الحركات العشوائية أو تمسكت بأنماط قصيرة المدى. تم حل ذلك عبر <strong>انخفاض تدريجي في الاستكشاف (ε-greedy decay)</strong> و<strong>تحديثات الشبكة الهدف</strong>. كما حسّن <strong>DDQN</strong> استقرار التدريب من خلال معالجة مشكلة المبالغة في قيم Q.</p>
+  </section>
+
+  <!-- التذييل -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="../index_ar.html#features">المهارات</a>
+        <a href="../index_ar.html#showcase">المشاريع</a>
+        <a href="../index_ar.html#timeline">الرحلة</a>
+        <a href="../index_ar.html#contact">التواصل</a>
+      </div>
+      <p>© 2025 ازر أدهم. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script src="../scripts.js"></script>
+</body>
+</html>

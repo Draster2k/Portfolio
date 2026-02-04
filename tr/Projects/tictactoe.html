@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X-O Yapay Zekâ | Azar Adham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Arka Plan -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+  <div class="neural-lines"><div class="neural-line"></div><div class="neural-line"></div><div class="neural-line"></div></div>
+
+  <!-- Üst Menü -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index_tr.html">
+          <img src="../assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>AZAR ADHAM</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index_tr.html#skills">Yetenekler</a></li>
+        <li><a href="../index_tr.html#showcase">Projeler</a></li>
+        <li><a href="../index_tr.html#journey">Yolculuk</a></li>
+        <li><a href="../index_tr.html#contact">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Başlık -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">PEKİŞTİRMELİ ÖĞRENME • YAPAY ZEKA OYUN AJANI</div>
+      <h1>X-O Yapay Zekâ</h1>
+      <p>
+        X-O oyunu için pekiştirmeli öğrenme ajanı.<br>
+        <strong>DQN</strong> ve <strong>DDQN</strong> kullanılarak <strong>öz-oyun</strong> ile en iyi stratejileri öğrenmek üzere geliştirildi.  
+        Lisans tezimde temel çalışmamı oluşturdu.
+      </p>
+    </div>
+  </section>
+
+  <!-- İçerik -->
+  <section class="project-section glass">
+    <h2>Genel Bakış</h2>
+    <p>Bu proje, klasik X-O oyununa uygulanan <strong>Derin Pekiştirmeli Öğrenmeyi</strong> inceledi. Amaç, stratejilerle önceden programlanmadan, tamamen <strong>öz-oyun</strong> yoluyla öğrenen bir yapay zekâ ajanı geliştirmekti. Ajan, öğrenmeyi stabilize etmek için <strong>DQN</strong> ve <strong>DDQN</strong> tekniklerinden faydalandı.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Teknik Özellikler</h2>
+    <ul>
+      <li><strong>Ortam:</strong> Özel X-O tahta durumu simülatörü</li>
+      <li><strong>Algoritmalar:</strong> DQN, Double DQN</li>
+      <li><strong>Eğitim:</strong> ε-greedy keşif ile öz-oyun bölümleri</li>
+      <li><strong>Kayıp Fonksiyonu:</strong> Q-değer güncellemeleri için Ortalama Kare Hata (MSE)</li>
+      <li><strong>Replay Buffer:</strong> Deneyim tekrar kullanımı ve hedef ağ güncellemeleri</li>
+      <li><strong>Kullanılan Çerçeveler:</strong> Python, TensorFlow, NumPy</li>
+    </ul>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Sonuçlar</h2>
+    <p>Ajan, kapsamlı eğitimden sonra <strong>en iyi X-O stratejilerini</strong> başarıyla öğrendi. DDQN, DQN’e kıyasla daha kararlıydı ve aşırı iyimser hamleleri azalttı. Eğitimli ajan, insanlara ve rastgele rakiplere karşı <strong>neredeyse kusursuz</strong> oynayarak sürekli <strong>galibiyet veya beraberlik</strong> elde etti.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Zorluklar ve Çözümler</h2>
+    <p>En büyük zorluk <strong>keşif ve yararlanma</strong> arasındaki dengedir. İlk modeller ya aşırı rastgele hamle yaptı ya da kısa vadeli kalıplara aşırı uyum sağladı. <strong>ε-greedy keşif azalması</strong> ve <strong>hedef ağ güncellemeleri</strong> ile öğrenme dengelendi. <strong>DDQN</strong> ise Q-değer tahminlerini iyileştirerek eğitimi stabilize etti.</p>
+  </section>
+
+  <!-- Altbilgi -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="../index_tr.html#features">Yetenekler</a>
+        <a href="../index_tr.html#showcase">Projeler</a>
+        <a href="../index_tr.html#timeline">Yolculuk</a>
+        <a href="../index_tr.html#contact">İletişim</a>
+      </div>
+      <p>&copy; 2025 Azar Adham. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script src="../scripts.js"></script>
+</body>
+</html>
