@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thermal Breast Cancer Detection | Azar Adham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Background + effects -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes">
+    <div class="shape"></div><div class="shape"></div>
+    <div class="shape"></div><div class="shape"></div>
+  </div>
+  <div class="neural-lines">
+    <div class="neural-line"></div><div class="neural-line"></div>
+    <div class="neural-line"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>AZAR ADHAM</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#showcase">Projects</a></li>
+        <li><a href="../index.html#journey">Journey</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">COMPUTER VISION • MEDICAL AI</div>
+      <h1>Thermal Breast Cancer Detection</h1>
+      <p>
+        End-to-end breast cancer detection system using <strong>thermal imaging</strong>.<br>
+        Built with <strong>YOLOv8</strong> for classification, enhanced with <strong>Grad-CAM explainability</strong>, and deployed on a 
+        <strong>Raspberry Pi 5 + MLX90640 thermal camera</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Project Content -->
+  <section class="project-section glass">
+    <h2>Overview</h2>
+    <p>This project targeted early, non-invasive detection of breast cancer using <strong>thermal imaging</strong>. Infrared thermography captures heat patterns, which can highlight vascular and metabolic activity linked to tumors. I trained deep learning models to classify <strong>benign vs malignant</strong> conditions and later optimized deployment on low-power embedded hardware.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Technical Highlights</h2>
+    <ul>
+      <li><strong>Dataset:</strong> Breast thermography images (Benign & Malignant, Diagnostics.xlsx metadata)</li>
+      <li><strong>Preprocessing:</strong> Augmentation, normalization, class rebalancing</li>
+      <li><strong>Models:</strong> YOLOv8 (final), MobileNetV2 baseline, CNN prototypes</li>
+      <li><strong>Explainability:</strong> Grad-CAM heatmaps to highlight regions of interest</li>
+      <li><strong>Hardware:</strong> Raspberry Pi 5 with MLX90640 thermal camera</li>
+      <li><strong>Frameworks:</strong> Python, PyTorch, OpenCV, Ultralytics YOLO</li>
+    </ul>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Results</h2>
+    <p>The final <strong>YOLOv8 model</strong> achieved over <strong>90% accuracy</strong> with balanced class performance across benign and malignant cases. <strong>Grad-CAM</strong> visualizations validated that the model focused on biologically relevant thermal patterns. The embedded Raspberry Pi deployment ran in <strong>real time</strong>, proving the feasibility of portable low-cost screening systems.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Challenges & Solutions</h2>
+    <p>The dataset suffered from <strong>class imbalance</strong> (more benign samples). I addressed this by applying <strong>data augmentation</strong> and <strong>class rebalancing</strong> during training. Running YOLOv8 on Raspberry Pi required <strong>quantization</strong> and hardware-aware optimization. The addition of Grad-CAM addressed the issue of <strong>clinical trust</strong> by making the AI’s decisions interpretable to medical practitioners.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="../index.html#features">Skills</a>
+        <a href="../index.html#showcase">Projects</a>
+        <a href="../index.html#timeline">Journey</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2025 Azar Adham. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts.js"></script>
+</body>
+</html>

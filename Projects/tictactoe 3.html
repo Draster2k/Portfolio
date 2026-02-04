@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe AI | Azar Adham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Background + effects -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes">
+    <div class="shape"></div><div class="shape"></div>
+    <div class="shape"></div><div class="shape"></div>
+  </div>
+  <div class="neural-lines">
+    <div class="neural-line"></div><div class="neural-line"></div>
+    <div class="neural-line"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>AZAR ADHAM</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#showcase">Projects</a></li>
+        <li><a href="../index.html#journey">Journey</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">REINFORCEMENT LEARNING • AI GAME AGENT</div>
+      <h1>Tic-Tac-Toe AI</h1>
+      <p>
+        Reinforcement Learning agent for Tic-Tac-Toe.<br>
+        Implemented with <strong>DQN</strong> and <strong>DDQN</strong> to learn optimal strategies through <strong>self-play</strong>.
+        Formed the basis of my undergraduate thesis.
+      </p>
+    </div>
+  </section>
+
+  <!-- Project Content -->
+  <section class="project-section glass">
+    <h2>Overview</h2>
+    <p>This project explored <strong>Deep Reinforcement Learning</strong> applied to the classic Tic-Tac-Toe game. The goal was to build an AI agent that learns from scratch via self-play, without being explicitly programmed with strategies. The agent leveraged <strong>DQN (Deep Q-Network)</strong> and <strong>DDQN (Double DQN)</strong> techniques to stabilize learning and avoid Q-value overestimation.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Technical Highlights</h2>
+    <ul>
+      <li><strong>Environment:</strong> Custom Tic-Tac-Toe board state simulator</li>
+      <li><strong>Algorithms:</strong> DQN, Double DQN</li>
+      <li><strong>Training:</strong> Self-play episodes with ε-greedy exploration</li>
+      <li><strong>Loss Function:</strong> Mean Squared Error (MSE) for Q-value updates</li>
+      <li><strong>Replay Buffer:</strong> Experience replay with target network updates</li>
+      <li><strong>Frameworks:</strong> Python, TensorFlow, NumPy</li>
+    </ul>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Results</h2>
+    <p>The agent successfully learned <strong>optimal Tic-Tac-Toe strategies</strong> after extensive training. With DDQN, stability improved compared to baseline DQN, reducing over-optimistic moves. The trained agent achieves near-perfect play against humans and random opponents, consistently forcing a <strong>win or draw</strong>.</p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Challenges & Solutions</h2>
+    <p>The main challenge was <strong>exploration vs. exploitation</strong>. Early models either over-explored random moves or over-fitted to short-term patterns. Integrating <strong>ε-greedy exploration decay</strong> and <strong>target network updates</strong> balanced learning. Using <strong>DDQN</strong> further stabilized training by addressing Q-value overestimation.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="../index.html#features">Skills</a>
+        <a href="../index.html#showcase">Projects</a>
+        <a href="../index.html#timeline">Journey</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2025 Azar Adham. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts.js"></script>
+</body>
+</html>

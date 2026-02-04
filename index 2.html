@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Keep your existing viewport, but add a few modern, low-risk essentials -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Azar Adham — AI & Computer Engineering portfolio. Projects in ML, optimization (EGO), clustering (TRCC), RL, and biomedical AI.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0EA5E9">
+  <link rel="canonical" href="https://azaradham.com/">
+
+  <!-- Existing OG/Twitter (kept) + a couple safe additions -->
+  <meta property="og:title" content="Azar Adham | AI & Computer Engineering Portfolio">
+  <meta property="og:description" content="Explore my projects, including the EGO-Optimizer, and chat with my AI assistant.">
+  <meta property="og:image" content="https://azaradham.com/assets/preview-thumbnail.jpg">
+  <meta property="og:url" content="https://azaradham.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Azar Adham">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Azar Adham | AI & Computer Engineering Portfolio">
+  <meta name="twitter:description" content="Explore my projects, including the EGO-Optimizer, and chat with my AI assistant.">
+  <meta name="twitter:image" content="https://azaradham.com/assets/preview-thumbnail.jpg">
+
+  <title>Azar Adham | Portfolio</title>
+
+  <!-- Icons (kept) + safe additions -->
+  <link rel="icon" type="image/x-icon" href="/assets/fivcon.ico?v=2">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Performance: preconnect + preload hero image -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/me_glasses_bg.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="styles.css" rel="stylesheet">
+
+  <!-- Structured data (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Azar Adham",
+    "url": "https://azaradham.com/",
+    "image": "https://azaradham.com/assets/me_glasses_bg.png",
+    "jobTitle": "AI & ML Engineer",
+    "sameAs": [
+      "https://github.com/Draster2k",
+      "https://www.linkedin.com/in/azer-adham-5454411a4/",
+      "https://x.com/AzerAdham2K",
+      "https://www.instagram.com/azer.shazi/"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Accessibility: skip link (does not affect layout if your CSS already handles it; otherwise it’s still harmless) -->
+  <a href="#home" class="skip-link">Skip to content</a>
+
+  <!-- Background + effects -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+  <div class="neural-lines"><div class="neural-line"></div><div class="neural-line"></div><div class="neural-line"></div></div>
+
+  <!-- Header -->
+  <header class="glass">
+    <nav>
+      <a href="../index.html" class="logo">
+        <img src="assets/Azer Logo-2 White.png" alt="Azar Logo">
+        <span>AZAR ADHAM</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#features">Skills</a></li>
+        <li><a href="#showcase">Projects</a></li>
+        <li><a href="#timeline">Journey</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="mobile-menu-toggle" aria-label="Open menu" role="button" tabindex="0">
+        <div class="hamburger-line"></div><div class="hamburger-line"></div><div class="hamburger-line"></div>
+      </div>
+    </nav>
+    <div class="mobile-nav">
+      <a href="#features">Skills</a>
+      <a href="#showcase">Projects</a>
+      <a href="#timeline">Journey</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-photo">
+      <img src="assets/me_glasses_bg.png" alt="Azar Adham" loading="eager" decoding="async" />
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-subtitle">COMPUTER ENGINEER</div>
+      <h1>AZAR ADHAM</h1>
+
+      <div class="hero-description">
+        <p>AI & ML Engineer & Researcher.<br>
+          Creator of the EGO-Optimizer algorithm.</p>
+      </div>
+
+      <!--<div class="cta-buttons">
+        <a href="../tr/index_tr.html" class="cta-button">Türkçe</a>
+        <a href="../ar/index_ar.html" class="cta-button">العربية</a>
+     </div> -->
+  </section>
+
+  <!-- Skills -->
+  <section class="features" id="features">
+    <div class="features-container">
+      <h2 class="section-title">Skills</h2>
+      <div class="diagonal-grid">
+
+        <div class="feature-row">
+          <div class="feature-content glass">
+            <div class="feature-icon">🐍</div>
+            <h3>Python & ML</h3>
+            <p>TensorFlow, PyTorch, Scikit-learn. Built CNNs, RNNs, reinforcement learning agents.
+               Comfortable with data pipelines, preprocessing, and visualization (Pandas, NumPy, Matplotlib).</p>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-content glass">
+            <div class="feature-icon">💻</div>
+            <h3>Software Dev</h3>
+            <p>Experience in C#, SQL, MATLAB, and JavaScript. Built web apps and backend tools.
+               Knowledge of version control (Git/GitHub), software design patterns, and debugging.</p>
+          </div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-content glass">
+            <div class="feature-icon">🔧</div>
+            <h3>Embedded Systems</h3>
+            <p>Raspberry Pi, Arduino. Developed voice-controlled wheelchair using Vosk speech recognition.
+               Hands-on experience with GPIO, sensors, and actuators for prototyping.</p>
+          </div>
+        </div>
+        <div class="feature-row">
+          <div class="feature-content glass">
+            <div class="feature-icon">📊</div>
+            <h3>Data Science</h3>
+            <p>Data analysis, visualization, and statistical modeling. Skilled in using Pandas, NumPy, and Matplotlib
+               for exploratory data analysis and insights extraction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="showcase" id="showcase">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-subtitle">Explore my work in AI, ML, Optimization, and Assistive Technologies.</p>
+
+    <div class="hexagon-container">
+
+      <a href="Projects/ego.html" class="hexagon">
+        <div class="hexagon-inner glass">
+          <h4>EGO</h4>
+          <p>Entropy-Guided Optimization</p>
+        </div>
+      </a>
+
+      <a href="Projects/trcc.html" class="hexagon">
+        <div class="hexagon-inner glass">
+          <h4>TRCC Algorithm</h4>
+          <p>Immune-inspired Clustering</p>
+        </div>
+      </a>
+
+      <a href="Projects/vos.html" class="hexagon">
+        <div class="hexagon-inner glass">
+          <h4>Video Object Segmentation</h4>
+          <p>ResNet50 + ConvLSTM + CBAM</p>
+        </div>
+      </a>
+
+      <a href="Projects/car-hacking.html" class="hexagon">
+        <div class="hexagon-inner glass">
+          <h4>Car Hacking IDS</h4>
+          <p>Random Forest + TRCC</p>
+        </div>
+      </a>
+
+      <a href="Projects/tictactoe.html" class="hexagon">
+        <div class="hexagon-inner glass">
+          <h4>Tic-Tac-Toe AI</h4>
+          <p>DQN + DDQN RL</p>
+        </div>
+      </a>
+
+      <a href="Projects/breast-cancer.html" class="hexagon">
+        <div class="hexagon-inner glass">
+          <h4>Breast Cancer Detection</h4>
+          <p>YOLOv8 + Grad-CAM</p>
+        </div>
+      </a>
+
+      <a href="Projects/blood-clot.html" class="hexagon">
+        <div class="hexagon-inner glass">
+          <h4>Blood Clot Detector</h4>
+          <p>MATLAB CNN GUI</p>
+        </div>
+      </a>
+
+      <a href="Projects/wheelchair.html" class="hexagon">
+        <div class="hexagon-inner glass">
+          <h4>Voice-Activated Wheelchair</h4>
+          <p>RPi + Vosk Speech</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+
+ <!-- Timeline -->
+ <section class="timeline" id="timeline">
+   <h2 class="section-title">Journey</h2>
+   <div class="timeline-container">
+     <div class="timeline-line"></div>
+
+     <!-- 2025 -->
+     <div class="timeline-item">
+       <div class="timeline-content glass">
+         <div class="timeline-year">2025</div>
+         <h4>Graduated in Computer Engineering</h4>
+         <p>Düzce University • Specialized in <strong>AI, ML, Cybersecurity</strong>.</p>
+         <p>Thesis: <strong>Deep Q-Learning for Tic-Tac-Toe</strong>.
+         Major project: <strong>Video Object Segmentation with ResNet50 + ConvLSTM + CBAM</strong>.</p>
+       </div>
+       <div class="timeline-dot"></div>
+     </div>
+
+     <!-- 2024 Internship -->
+     <div class="timeline-item">
+       <div class="timeline-content glass">
+         <div class="timeline-year">2024</div>
+         <h4>Internship at Flexisb</h4>
+         <p><strong>Flexisb Digital Design & Software Services</strong> • Junior Engineer (Networking)</p>
+         <p>Worked on <strong>enterprise networking, system integration</strong>,
+         and supporting <strong>digital service design</strong>. Contributed to
+         troubleshooting, configuration, and design of network infrastructure.</p>
+       </div>
+       <div class="timeline-dot"></div>
+     </div>
+
+     <!-- 2024 Projects -->
+     <div class="timeline-item">
+       <div class="timeline-content glass">
+         <div class="timeline-year">2024</div>
+         <h4>Major Research Projects</h4>
+         <p>Developed <strong>TRCC clustering algorithm</strong> (immune-inspired).
+         Designed <strong>EGO optimizer</strong> for complex search landscapes.</p>
+         <p>Biomedical ML: <strong>Breast Cancer Detection (YOLOv8)</strong>,
+         <strong>Blood Clot Detector (MATLAB CNN)</strong>.</p>
+       </div>
+       <div class="timeline-dot"></div>
+     </div>
+
+     <!-- 2023 -->
+     <div class="timeline-item">
+       <div class="timeline-content glass">
+         <div class="timeline-year">2023</div>
+         <h4>Deep Dive into ML</h4>
+         <p>Created <strong>Car Hacking IDS</strong> with Random Forest + TRCC clustering.
+         Explored <strong>Complex Network Analysis</strong>: centrality, clustering, PageRank.</p>
+       </div>
+       <div class="timeline-dot"></div>
+     </div>
+
+     <!-- 2022 -->
+     <div class="timeline-item">
+       <div class="timeline-content glass">
+         <div class="timeline-year">2022</div>
+         <h4>First Prototypes</h4>
+         <p>Assistive <strong>Voice-Activated Wheelchair</strong> (Raspberry Pi + Vosk).
+         Early biomedical ML with MATLAB classifiers.</p>
+       </div>
+       <div class="timeline-dot"></div>
+     </div>
+
+     <!-- 2020 -->
+     <div class="timeline-item">
+       <div class="timeline-content glass">
+         <div class="timeline-year">2020</div>
+         <h4>Started Computer Engineering</h4>
+         <p>Joined <strong>Düzce University</strong>.
+         Focused on <strong>programming, math, and system fundamentals</strong>.</p>
+       </div>
+       <div class="timeline-dot"></div>
+     </div>
+
+   </div>
+ </section>
+
+ <!-- Certifications -->
+   <section class="features" id="certifications">
+   <h2 class="section-title">Certifications</h2>
+   <p class="section-subtitle">MATLAB Onramp Courses</p>
+
+   <div class="hexagon-container">
+     <a href="assets/certs/MatLab.pdf" class="hexagon" target="_blank" rel="noopener noreferrer">
+       <div class="hexagon-inner glass">
+         <h4>MATLAB Onramp</h4>
+         <p>Before 17 Oct 2023</p>
+       </div>
+     </a>
+
+     <a href="assets/certs/Signal-Processing.pdf" class="hexagon" target="_blank" rel="noopener noreferrer">
+       <div class="hexagon-inner glass">
+         <h4>Signal Processing Onramp</h4>
+         <p>17 Oct 2023</p>
+       </div>
+     </a>
+
+     <a href="assets/certs/Machine-Learning.pdf" class="hexagon" target="_blank" rel="noopener noreferrer">
+       <div class="hexagon-inner glass">
+         <h4>Machine Learning Onramp</h4>
+         <p>28 Nov 2023</p>
+       </div>
+     </a>
+
+     <a href="assets/certs/Deep-Learning.pdf" class="hexagon" target="_blank" rel="noopener noreferrer">
+       <div class="hexagon-inner glass">
+         <h4>Deep Learning Onramp</h4>
+         <p>17 Dec 2023</p>
+       </div>
+     </a>
+
+     <a href="assets/certs/Optimization.pdf" class="hexagon" target="_blank" rel="noopener noreferrer">
+       <div class="hexagon-inner glass">
+         <h4>Optimization Onramp</h4>
+         <p>28 Nov 2024</p>
+       </div>
+     </a>
+   </div>
+ </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="contact-container">
+      <div class="contact-info glass">
+        <h3>Get in Touch</h3>
+        <div class="social-links">
+          <a href="https://github.com/Draster2k" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/azer-adham-5454411a4/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/AzerAdham2K" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/azer.shazi/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="../index.html#features">Skills</a>
+        <a href="../index.html#showcase">Projects</a>
+        <a href="../index.html#timeline">Journey</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2026 Azar Adham.<br> Sole Maintainer of EGO-Optimizer.</p>
+        <p class="license-text">Algorithm available under MIT License for academic use.</p>
+      </div>
+    </div>
+    <div class="footer-download">
+      <a href="assets/Azar_Adham_CV.pdf" download>Download CV</a>
+    </div>
+  </footer>
+
+  <!-- Scripts: keep everything, but add a safe correct-path include + defer (do not remove your original line) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+
+  <!-- Correct-path include (kept alongside your existing ../scripts.js so you don’t “lose” anything) -->
+  <script src="scripts.js" defer></script>
+
+  <!-- Your original include (kept, unchanged) -->
+  <script src="../scripts.js" defer></script>
+
+  <button id="chat-toggle" onclick="toggleChat()">Ask my AI</button>
+
+  <div id="chat-container" class="hidden">
+    <div id="chat-header">
+    <div style="display: flex; align-items: center; gap: 8px;">
+        <span id="status-dot" class="dot-offline"></span>
+        <span>Azar's AI Assistant</span>
+    </div>
+    <button class="chat-close-btn" onclick="toggleChat()">
+        <i class="fas fa-times"></i>
+    </button>
+  </div>
+    <div id="chat-messages"></div>
+    <div class="chat-input-area">
+    <button id="voice-btn" class="icon-btn" title="Speak">
+        <i class="fas fa-microphone"></i>
+    </button>
+
+    <input type="text" id="user-input" placeholder="Type or speak..." autocomplete="off">
+
+    <button id="send-btn" class="icon-btn" onclick="sendMessage()" title="Send">
+        <i class="fas fa-paper-plane"></i>
+    </button>
+  </div>
+</div>
+
+</body>
+</html>

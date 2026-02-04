@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Azar | Admin Dashboard</title>
+
+  <!-- Your template CSS (DO NOT TOUCH) -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Admin-only overrides (safe) -->
+  <style>
+    /* Force template background layers behind everything */
+    .neural-background,
+    .geometric-shapes,
+    .neural-lines {
+      position: fixed !important;
+      inset: 0 !important;
+      z-index: 0 !important;
+      pointer-events: none !important;
+    }
+
+    /* Stop any page-level white fill from winning */
+    html, body {
+      background: transparent !important;
+    }
+
+    /* Keep admin content above background */
+    .admin-wrap {
+      position: relative;
+      z-index: 5;
+      padding: 40px;
+      max-width: 1100px;
+      margin: 60px auto;
+    }
+
+    .stats-card {
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    .admin-login {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+
+    .admin-login input[type="password"] {
+      flex: 1 1 520px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(14,165,233,0.65);
+      color: #fff;
+      outline: none;
+    }
+
+    .admin-login input[type="password"]::placeholder {
+      color: rgba(226,232,240,0.6);
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(226,232,240,0.75);
+      font-size: 13px;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      color: rgba(226,232,240,0.92);
+    }
+
+    .admin-table th {
+      text-align: left;
+      padding: 12px 12px;
+      color: #22D3EE;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      border-bottom: 1px solid rgba(165,243,252,0.28);
+    }
+
+    .admin-table td {
+      padding: 14px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 14px;
+      vertical-align: top;
+    }
+
+    .admin-table tr:hover {
+      background: rgba(165,243,252,0.07);
+    }
+
+    .loc-tag { color: #10B981; font-weight: 650; }
+    .org-tag { color: #F59E0B; font-weight: 600; }
+    .query-cell { color: rgba(226,232,240,0.95); font-style: italic; }
+
+    /* If action-btn exists in template, this keeps it consistent.
+       If not, this still makes it look decent. */
+    .action-btn {
+      border-radius: 14px;
+      padding: 10px 14px;
+      border: 1px solid rgba(34,211,238,0.55);
+      background: rgba(34,211,238,0.10);
+      color: #E2E8F0;
+      cursor: pointer;
+      transition: 120ms ease;
+    }
+    .action-btn:hover { background: rgba(34,211,238,0.16); }
+    .action-btn:active { transform: scale(0.98); }
+
+    /* Make the card usable on small screens */
+    @media (max-width: 680px) {
+      .admin-wrap { padding: 20px; margin: 30px auto; }
+      .stats-card { padding: 18px; }
+      .admin-login input[type="password"] { flex-basis: 100%; }
+    }
+  </style>
+</head>
+
+<body class="glass">
+  <!-- Background layers: exactly like index -->
+  <div class="neural-background"></div>
+
+  <div class="geometric-shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+
+  <div class="neural-lines">
+    <div class="neural-line"></div>
+    <div class="neural-line"></div>
+    <div class="neural-line"></div>
+  </div>
+
+  <!-- Admin UI -->
+  <div class="admin-wrap">
+    <div class="stats-card">
+      <h1 style="color:#fff;margin:0 0 18px;">Recruiter Tracker</h1>
+
+      <div class="admin-login">
+        <input type="password" id="admin-key" placeholder="Admin Key" autocomplete="current-password" />
+
+        <label class="remember">
+          <input type="checkbox" id="remember-key" />
+          Remember
+        </label>
+
+        <button class="action-btn" id="unlock-btn" type="button">Unlock</button>
+      </div>
+
+      <div id="dashboard-content" style="display:none;">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Time (UTC)</th>
+              <th>City / Country</th>
+              <th>Organization</th>
+              <th>Query</th>
+            </tr>
+          </thead>
+          <tbody id="log-rows"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ====== AUTO-RESTORE KEY ======
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("adminKey");
+      if (saved) {
+        document.getElementById("admin-key").value = saved;
+        document.getElementById("remember-key").checked = true;
+        fetchLogs();
+      }
+    });
+
+    // Button + Enter key
+    document.getElementById("unlock-btn").addEventListener("click", fetchLogs);
+    document.getElementById("admin-key").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") fetchLogs();
+    });
+
+    // ====== MAIN AUTH + FETCH ======
+    async function fetchLogs() {
+      const keyInput = document.getElementById("admin-key");
+      const remember = document.getElementById("remember-key").checked;
+      const key = keyInput.value.trim();
+
+      if (!key) return;
+
+      if (remember) localStorage.setItem("adminKey", key);
+      else localStorage.removeItem("adminKey");
+
+      try {
+        const res = await fetch("https://portfolio-backend-mn66.onrender.com/admin-stats", {
+          method: "GET",
+          headers: { "x-admin-token": key }
+        });
+
+        if (!res.ok) throw new Error("unauthorized");
+
+        const logs = await res.json();
+        renderTable(logs);
+      } catch (err) {
+        localStorage.removeItem("adminKey");
+        alert("Invalid admin key");
+      }
+    }
+
+    // ====== TABLE RENDER ======
+    function renderTable(logs) {
+      const body = document.getElementById("log-rows");
+      body.innerHTML = "";
+
+      const list = Array.isArray(logs) ? logs.slice().reverse() : [];
+
+      for (const log of list) {
+        const tr = document.createElement("tr");
+
+        const tdTime = document.createElement("td");
+        tdTime.textContent = log.timestamp ?? "";
+
+        const tdLoc = document.createElement("td");
+        tdLoc.className = "loc-tag";
+        tdLoc.textContent = log.location ?? "Unknown";
+
+        const tdOrg = document.createElement("td");
+        tdOrg.className = "org-tag";
+        tdOrg.textContent = log.company ?? "Individual/Unknown";
+
+        const tdQuery = document.createElement("td");
+        tdQuery.className = "query-cell";
+        tdQuery.textContent = `"${(log.query ?? "").toString()}"`;
+
+        tr.appendChild(tdTime);
+        tr.appendChild(tdLoc);
+        tr.appendChild(tdOrg);
+        tr.appendChild(tdQuery);
+
+        body.appendChild(tr);
+      }
+
+      document.getElementById("dashboard-content").style.display = "block";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EGO Algorithm | Azar Adham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <!-- Background -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes"><div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
+  <div class="neural-lines"><div class="neural-line"></div><div class="neural-line"></div><div class="neural-line"></div></div>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="/index.html">
+          <img src="/assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>AZAR ADHAM</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/index.html#skills">Skills</a></li>
+        <li><a href="/index.html#showcase">Projects</a></li>
+        <li><a href="/index.html#journey">Journey</a></li>
+        <li><a href="/index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">OPTIMIZATION • METAHEURISTICS</div>
+      <h1>EGO: Entropy-Guided Optimization</h1>
+      <p>A metaheuristic algorithm where <strong>entropy</strong> dynamically balances <strong>exploration</strong> vs <strong>exploitation</strong>.</p>
+    </div>
+  </section>
+
+  <!-- Project Sections -->
+  <section class="project-section glass">
+    <h2>Entropy Formula</h2>
+    <p>The entropy of the population fitness distribution is calculated as:</p>
+    <p style="text-align:center">
+      $$ H = - \sum_{i=1}^n p_i \log(p_i) $$
+    </p>
+    <p>
+      where \( p_i \) is the normalized probability of fitness rank \( i \).  
+      <strong>High entropy</strong> → explore more.  
+      <strong>Low entropy</strong> → exploit best candidates.
+    </p>
+  </section>
+
+  <section class="project-section glass">
+    <h2>Results</h2>
+    <p>EGO was benchmarked against Genetic Algorithm (GA), Particle Swarm Optimization (PSO), and Differential Evolution (DE):</p>
+    <ul>
+      <li><strong>Sphere (convex):</strong> Fastest convergence.</li>
+      <li><strong>Ackley (multimodal):</strong> Avoided premature convergence where GA/PSO failed.</li>
+      <li><strong>Rastrigin:</strong> Maintained diversity longer → reached global optima.</li>
+    </ul>
+    <p class="results-equation">
+      f<sub>best</sub>(EGO) &lt; f<sub>best</sub>(GA, PSO, DE)  
+      <br>
+      for 90% of runs
+    </p>
+
+  </section>
+
+  <section class="project-section glass">
+    <h2>Impact</h2>
+    <p>EGO shows that <strong>information-theoretic signals</strong> (entropy) can improve optimization stability.  
+    Future extensions: <strong>neural architecture search</strong> and <strong>ML hyperparameter tuning</strong>.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links"><a href="/index.html#features">Skills</a><a href="/index.html#showcase">Projects</a><a href="/index.html#timeline">Journey</a><a href="/index.html#contact">Contact</a></div>
+      <p>&copy; 2025 Azar Adham. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="/scripts.js"></script>
+</body>
+</html>
