@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Portfolio Chatbot | Azar Adham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Background -->
+  <div class="neural-background"></div>
+  <div class="geometric-shapes">
+    <div class="shape"></div><div class="shape"></div><div class="shape"></div><div class="shape"></div>
+  </div>
+  <div class="neural-lines">
+    <div class="neural-line"></div><div class="neural-line"></div><div class="neural-line"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="/index.html">
+          <img src="/assets/Azer Logo-2 White.png" alt="AA Logo" class="nav-logo">
+          <span>AZAR ADHAM</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/index.html#skills">Skills</a></li>
+        <li><a href="/index.html#showcase">Projects</a></li>
+        <li><a href="/index.html#journey">Journey</a></li>
+        <li><a href="/index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="hero-subtitle">LLM • BACKEND • DEPLOYMENT</div>
+      <h1>AI Portfolio Chatbot</h1>
+      <p>
+        A conversational assistant embedded in my portfolio that answers questions about my work,
+        routes requests to a private backend, and serves responses from a Gemini-powered agent.
+      </p>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="project-section glass">
+    <h2>What It Does</h2>
+    <p>
+      Visitors can ask natural-language questions about my projects, skills, and experience.
+      The chat UI sends requests to a private Python backend deployed on Render, which calls Gemini
+      and returns structured responses to the frontend.
+    </p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Real-time Q&A</h3>
+        <p class="stat-desc">Interactive assistant on a public portfolio site.</p>
+        <div class="stat-comparison">
+          <div class="stat-row"><span>Input:</span><span class="good-score">Natural language</span></div>
+          <div class="stat-row"><span>Output:</span><span class="good-score">Concise explanations + links</span></div>
+        </div>
+        <p class="stat-winner">Visitor-facing AI feature</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Private Backend</h3>
+        <p class="stat-desc">API key stays server-side.</p>
+        <div class="stat-comparison">
+          <div class="stat-row"><span>Runtime:</span><span class="good-score">Python service on Render</span></div>
+          <div class="stat-row"><span>Security:</span><span class="good-score">Gemini key not exposed</span></div>
+        </div>
+        <p class="stat-winner">Production-safe deployment</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="project-section glass">
+    <h2>Architecture</h2>
+    <p>
+      The portfolio frontend sends chat requests to a Render-hosted backend endpoint. The backend applies
+      request formatting/guardrails, calls Gemini, and returns a clean response payload to the UI.
+      A scheduled pinger hits the backend health endpoint periodically to reduce cold-start delays.
+    </p>
+
+    <div class="stat-card" style="margin-top: 16px;">
+      <code>
+Portfolio UI
+  → Render Backend (Python)
+      → Gemini API
+  ← Response JSON
+(Health pinger keeps backend warm)
+      </code>
+    </div>
+  </section>
+
+  <!-- Key features -->
+  <section class="project-section glass">
+    <h2>Key Features</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Prompting + Guardrails</h3>
+        <p class="stat-desc">Backend controls model behavior.</p>
+        <div class="stat-comparison">
+          <div class="stat-row"><span>Controls:</span><span class="good-score">system rules + formatting</span></div>
+          <div class="stat-row"><span>Goal:</span><span class="good-score">useful, portfolio-relevant answers</span></div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <h3>Health Monitoring</h3>
+        <p class="stat-desc">Operational reliability basics.</p>
+        <div class="stat-comparison">
+          <div class="stat-row"><span>Endpoint:</span><span class="good-score">/health</span></div>
+          <div class="stat-row"><span>Pinger:</span><span class="good-score">scheduled uptime checks</span></div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <h3>Separation of Concerns</h3>
+        <p class="stat-desc">UI stays simple; logic stays server-side.</p>
+        <div class="stat-comparison">
+          <div class="stat-row"><span>Frontend:</span><span class="good-score">chat UI + rendering</span></div>
+          <div class="stat-row"><span>Backend:</span><span class="good-score">LLM calls + security</span></div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <h3>Cost Awareness</h3>
+        <p class="stat-desc">Designed to stay cheap while job hunting.</p>
+        <div class="stat-comparison">
+          <div class="stat-row"><span>Key point:</span><span class="good-score">avoid always-on infra</span></div>
+          <div class="stat-row"><span>Tradeoff:</span><span class="good-score">cold starts mitigated by pinger</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo prompts -->
+  <section class="project-section glass">
+    <h2>Example Questions</h2>
+    <p>Typical user prompts the chatbot handles:</p>
+    <div class="stat-card">
+      <code>
+- "What projects have you built on AWS?"
+- "Explain your EGO optimizer in simple terms."
+- "What is your experience with agents and automation?"
+- "Can you summarize your strongest skills for an ML/AI role?"
+      </code>
+    </div>
+  </section>
+
+  <!-- Links -->
+  <section class="project-section glass">
+    <h2>Links</h2>
+    <div class="button-group">
+      <a href="/index.html#showcase" class="btn-primary">Back to Projects</a>
+      <br>
+      <a href="https://portfolio-backend-mn66.onrender.com/health" target="_blank" class="btn-secondary">Backend Health Endpoint</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#showcase">Projects</a>
+        <a href="../index.html#journey">Journey</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2026 Azar Adham.<br> AI Portfolio Chatbot.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts.js"></script>
+</body>
+</html>
