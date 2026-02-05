@@ -15,7 +15,8 @@ This repository contains the source code for my personal portfolio website, host
 
 ## 🛠️ Tech Stack
 - **HTML5 / CSS3 / JavaScript (Vanilla)** - Responsive, mobile-friendly design  
-- Hosted on **AWS** ## 📂 Project Structure
+- Hosted on **AWS**
+## 📂 Project Structure
 ```
 Azerserver/
 │── Projects/          # Individual project pages
