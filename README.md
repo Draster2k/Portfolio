@@ -13,6 +13,12 @@ This repository contains the source code for my personal portfolio website, host
 - **Contact Section** – Social links (GitHub, LinkedIn, Twitter, Instagram) with glowing hover effects.  
 - **Dark Futuristic UI** – Neon blue accents, glass panels, smooth transitions.  
 
+## ⚡ Geek Mode
+Want to see my resume as a raw JSON API? Run this command in your terminal:
+
+```bash
+curl https://7ufjb0vdae.execute-api.us-east-1.amazonaws.com/resume
+
 ## 🛠️ Tech Stack
 - **HTML5 / CSS3 / JavaScript (Vanilla)** - Responsive, mobile-friendly design  
 - Hosted on **AWS**
