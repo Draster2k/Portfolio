@@ -1,4 +1,4 @@
-# AzerServer – Portfolio Website  
+# Azar Adham – Portfolio Website  
 
 ![Build Status](https://github.com/Draster2k/Azerserver/actions/workflows/pages/pages-build-deployment/badge.svg)
 
