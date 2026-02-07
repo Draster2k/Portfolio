@@ -3,7 +3,7 @@ name: Deploy Portfolio
 on:
   push:
     branches:
-      - main  # OR 'master' - check your branch name!
+      - main
 
 permissions:
   id-token: write
@@ -21,7 +21,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1 # Change if your bucket is elsewhere, but us-east-1 is standard
+          aws-region: us-east-1
 
       - name: Sync files to S3
         run: |
